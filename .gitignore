@@ -1,0 +1,12 @@
+*.aux
+*.blg
+*.fls
+*.log
+*.out
+*.toc
+*.tar
+._gcs.bst
+._Figures
+*.fdb_latexmk
+*.synctex.gz
+proposal.pdf

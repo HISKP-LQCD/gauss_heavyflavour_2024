@@ -1,0 +1,131 @@
+\begin{thebibliography}{10}
+
+\bibitem{Gambino:2020crt}
+Paolo Gambino and Shoji Hashimoto,
+ {\em {Inclusive Semileptonic Decays from Lattice QCD}},
+ Phys. Rev. Lett., {\bf 125}, no. 3, 032001, 2020.
+
+\bibitem{Hansen:2019idp}
+Martin Hansen, Alessandro Lupo, and Nazario Tantalo,
+ {\em {Extraction of spectral densities from lattice correlators}},
+ Phys. Rev. D, {\bf 99}, no. 9, 094508, 2019.
+
+\bibitem{Bulava:2019kbi}
+John Bulava and Maxwell~T. Hansen,
+ {\em {Scattering amplitudes from finite-volume spectral functions}},
+ Phys. Rev. D, {\bf 100}, no. 3, 034521, 2019.
+
+\bibitem{Bulava:2021fre}
+John Bulava, Maxwell~T. Hansen, Michael~W. Hansen, Agostino Patella, and
+  Nazario Tantalo,
+ {\em {Inclusive rates from smeared spectral densities in the two-dimensional
+  O(3) non-linear \ensuremath{\sigma}-model}},
+ JHEP, {\bf 07}, 034, 2022.
+
+\bibitem{Gambino:2022dvu}
+Paolo Gambino, Shoji Hashimoto, Sandro M\"achler, Marco Panero, Francesco
+  Sanfilippo, Silvano Simula, Antonio Smecca, and Nazario Tantalo,
+ {\em {Lattice QCD study of inclusive semileptonic decays of heavy mesons}},
+ JHEP, {\bf 07}, 083, 2022.
+
+\bibitem{ExtendedTwistedMass:2021qui}
+C.~Alexandrou et~al.,
+ {\em {Ratio of kaon and pion leptonic decay constants with Nf=2+1+1
+  Wilson-clover twisted-mass fermions}},
+ Phys. Rev. D, {\bf 104}, no. 7, 074520, 2021.
+
+\bibitem{ExtendedTwistedMass:2021gbo}
+C.~Alexandrou et~al.,
+ {\em {Quark masses using twisted-mass fermion gauge ensembles}},
+ Phys. Rev. D, {\bf 104}, no. 7, 074515, 2021.
+
+\bibitem{ExtendedTwistedMass:2022jpw}
+C.~Alexandrou et~al.,
+ {\em {Lattice calculation of the short and intermediate time-distance hadronic
+  vacuum polarization contributions to the muon magnetic moment using
+  twisted-mass fermions}},
+ Phys. Rev. D, {\bf 107}, no. 7, 074506, 2023.
+
+\bibitem{ParticleDataGroup:2020ssz}
+P.~A. Zyla et~al.,
+ {\em {Review of Particle Physics}},
+ PTEP, {\bf 2020}, no. 8, 083C01, 2020.
+
+\bibitem{HFLAV:2019otj}
+Yasmine~Sara Amhis et~al.,
+ {\em {Averages of b-hadron, c-hadron, and $\tau $-lepton properties as of
+  2018}},
+ Eur. Phys. J. C, {\bf 81}, no. 3, 226, 2021.
+
+\bibitem{Gambino:2019sif}
+Paolo Gambino, Martin Jung, and Stefan Schacht,
+ {\em {The $V_{cb}$ puzzle: An update}},
+ Phys. Lett. B, {\bf 795}, 386--390, 2019.
+
+\bibitem{ExtendedTwistedMassCollaborationETMC:2022sta}
+Constantia Alexandrou et~al.,
+ {\em {Probing the Energy-Smeared R Ratio Using Lattice QCD}},
+ Phys. Rev. Lett., {\bf 130}, no. 24, 241901, 2023.
+
+\bibitem{Frezzotti:2003ni}
+R.~Frezzotti and G.C. Rossi,
+ {\em {Chirally improving Wilson fermions. 1. O(a) improvement}},
+ JHEP, {\bf 0408}, 007, 2004.
+
+\bibitem{Dimopoulos:2021qsf}
+Petros Dimopoulos, Roberto Frezzotti, Marco Garofalo, and Silvano Simula,
+ {\em {$K$- and $D_{(s)}$-meson leptonic decay constants with physical light,
+  strange and charm quarks by ETMC}},
+ PoS, {\bf LATTICE2021}, 472, 2021.
+
+\bibitem{Alexandrou:2018egz}
+Constantia Alexandrou et~al.,
+ {\em {Simulating twisted mass fermions at physical light, strange and charm
+  quark masses}},
+ Phys. Rev., {\bf D98}, no. 5, 054518, 2018.
+
+\bibitem{Frezzotti:2004wz}
+R.~Frezzotti and G.C. Rossi,
+ {\em {Chirally improving Wilson fermions. II. Four-quark operators}},
+ JHEP, {\bf 0410}, 070, 2004.
+
+\bibitem{ETM:2009sed}
+B.~Blossier et~al.,
+ {\em {A Proposal for B-physics on current lattices}},
+ JHEP, {\bf 04}, 049, 2010.
+
+\bibitem{Allton:1993wc}
+C.~R. Allton et~al.,
+ {\em {Gauge invariant smearing and matrix correlators using Wilson fermions at
+  Beta = 6.2}},
+ Phys. Rev. D, {\bf 47}, 5128--5137, 1993.
+
+\bibitem{FALCIONI1985624}
+M.~Falcioni, M.L. Paciello, G.~Parisi, and B.~Taglienti,
+ {\em Again on SU(3) glueball mass},
+ Nuclear Physics B, {\bf 251}, 624 -- 632, 1985.
+
+\bibitem{Clark:2009wm}
+M.~A. Clark, R.~Babich, K.~Barros, R.~C. Brower, and C.~Rebbi,
+ {\em {Solving Lattice QCD systems of equations using mixed precision solvers
+  on GPUs}},
+ Comput. Phys. Commun., {\bf 181}, 1517--1528, 2010.
+
+\bibitem{Babich:2011np}
+R.~Babich, M.~A. Clark, B.~Joo, G.~Shi, R.~C. Brower, and S.~Gottlieb,
+ {\em {Scaling Lattice QCD beyond 100 GPUs}},
+  in: {SC11 Washington, November 12-18, 2011}, 2011.
+
+\bibitem{Clark:2016rdz}
+M.~A. Clark, B{\'a}lint Jo{\'o}, Alexei Strelchenko, Michael Cheng, Arjun
+  Gambhir, and Richard Brower,
+ {\em {Accelerating Lattice QCD Multigrid on GPUs Using Fine-Grained
+  Parallelization}},
+ 2016.
+
+\bibitem{deDivitiis:2004kq}
+G.~M. de~Divitiis, R.~Petronzio, and N.~Tantalo,
+ {\em {On the discretization of physical momenta in lattice QCD}},
+ Phys. Lett. B, {\bf 595}, 408--413, 2004.
+
+\end{thebibliography}
