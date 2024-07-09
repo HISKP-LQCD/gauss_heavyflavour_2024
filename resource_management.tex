@@ -1,0 +1,81 @@
+\subsection{Resource management}
+
+Our team has extensive experience in managing large computer time
+allocations, having been awarded two PRACE Tier-0 allocations, many
+NIC Gauss computing allocations, large scale production projects on
+JUWELS Booster, Marconi100 at Cineca and Piz Daint at CSCS in
+Switzerland, and a number of smaller local computer time
+allocations. These allocations exceed 500 Mi core-hours in total. The
+team will follow established practices for monitoring resources and
+progress, including periodically (around once a week) telephone
+conferences and local group meetings.  During these calls adherence to
+the schedule proposed below will be evaluated, with corrections made
+if necessary.
+
+\subsection{Work schedule}
+
+\begin{figure}[tbp]
+  \begin{ganttchart}[
+      x unit=0.335cm,        
+      y unit title=0.5cm,
+      y unit chart=0.5cm,
+      vgrid,hgrid,
+      %        title label anchor/.style={below=-1.6ex},
+      bar label font=\small,
+      title left shift=.05,
+      title right shift=-.05,
+      title height=1,
+      incomplete/.style={fill=white},
+      progress label text={},
+      bar height=0.8,
+      bar top shift=+0.1,
+      group right shift=0,
+      group top shift=.0,
+      group height=.0
+    ]{1}{48}
+    %labels
+    \sffamily
+    \gantttitle{\textbf{Allocation duration}}{48} \\
+    \gantttitle{Nov.}{4} 
+    \gantttitle{Dec.}{4} 
+    \gantttitle{Jan.}{4} 
+    \gantttitle{Feb.}{4} 
+    \gantttitle{Mar.}{4} 
+    \gantttitle{Apr.}{4}
+    \gantttitle{May.}{4} 
+    \gantttitle{Jun.}{4} 
+    \gantttitle{Jul.}{4} 
+    \gantttitle{Aug.}{4} 
+    \gantttitle{Sep.}{4} 
+    \gantttitle{Oct.}{4}
+    \\
+\ganttbar[inline,bar/.style={fill=blue!30}]{cB64}{1}{8}\\
+\ganttbar[inline,bar/.style={fill=blue!60}]{cB96}{8}{14}
+\ganttbar[inline,bar/.style={fill=green!30}]{cC80 }{15}{24}
+\ganttbar[inline,bar/.style={fill=magenta!30}]{cD96 }{24}{30}\\
+\ganttbar[inline,bar/.style={fill=green!60}]{cC112 }{30}{40}
+\ganttbar[inline,bar/.style={fill=red!30}]{cAp64 }{41}{48}
+%    \gantttitle{Sub-project 1: pion and kaon $\langle x^n\rangle$}{48}\\
+%    \ganttbar[inline,bar/.style={fill=red!30}]{cB64 connected 2- and 3-pt}{1}{48}\\
+%    \ganttbar[inline,bar/.style={fill=blue!20}]{cB64 light/strange loops}{1}{48}\\
+%    
+%    \gantttitle{Sub-project 2: hadronic vacuum polarisation}{48}\\
+%    \ganttbar[inline,bar/.style={fill=red!20}]{cC112 meson 2pt functions}{1}{48}\\
+%    \ganttbar[inline,bar/.style={fill=blue!20}]{cB48 meson 2pt functions}{1}{16}
+%    
+  \end{ganttchart}
+  \caption{A Gantt chart describing the scheduling of the steps
+    involved in our calculation.}
+  \label{fig:gantt}
+\end{figure}
+
+Since we are dealing in this proposal only with the estimation of
+observables on already existing gauge configurations, all separate
+runs are independent and, thus, runs for different configurations do
+not depend on each other. We will avoid to store so-called propagators
+completely, all contractions will be performed on the fly.
+
+We plan to run all tasks sequentially as indicated in the Gantt
+chart \Cref{fig:gantt}. 
+
+\endinput

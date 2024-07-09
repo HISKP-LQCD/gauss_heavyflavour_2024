@@ -1,0 +1,172 @@
+\documentclass [a4paper, 11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{float}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\input{additions}
+\textwidth 16 cm
+\textheight 23 cm
+\setlength{\oddsidemargin}{0.1 cm}
+\setlength{\topmargin}{1 cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+\setlength{\footskip}{0.75cm}
+\setlength{\parindent}{0cm}
+\setlength{\oddsidemargin}{0.1 cm}
+\setlength{\itemsep}{10pt}
+\bibliographystyle{gcs}
+\cfoot{\pagemark}
+\ofoot{\tiny V1.8-2020DEC02}
+ 
+\begin{document}
+ 
+\begin{figure}[H]
+\begin{center}
+  \includegraphics[scale=0.45]{Figures/GCS-hlrs-fzj-lrz.jpg}\\
+\end{center}
+\end{figure}
+
+\begin{center}
+{\LARGE \bf Project Proposal for Tier 0/Tier 1 HPC Access} \\
+
+\bigskip
+\bigskip
+\bigskip
+\end{center}
+\textbf{Period}\\
+\phantom{MM}\textit{10.2023-9.2024}
+
+\bigskip
+\textbf{Project title}\\
+\phantom{MM}\textit{Inclusive semileptonic decay rates from lattice QCD}
+
+\bigskip
+\textbf{Type of project}\\
+\phantom{MM} ``new project''
+
+\bigskip
+\textbf{HPC system(s) and corresponding centre(s)}\\
+\phantom{MM} \textit{JUWELS Booster, JSC}
+
+\bigskip
+\textbf{Project ID or project acronym}\\
+\phantom{MM} \textit{ISDLQCD}%\textit{Please provide in case of a project extension}
+
+\bigskip
+\textbf{Principal investigator}\\
+\phantom{MM} \textit{C. Urbach, Helmholtz-Institut für Strahlen- und Kernphysik (Theorie) and
+	Bethe Center for Theoretical Physics, University of Bonn, 53115 Bonn, Germany}
+
+\bigskip
+\textbf{Project contributor(s)}\\
+\phantom{MM} \textit{ 
+ A.~Evangelista$^a$,
+ R.~Frezzotti$^a$,
+ G.~Gagliardi$^b$,
+ M.~Garofalo$^c$,
+ C.~Groß$^c$,
+ B.~Kostrzewa$^d$,
+ V.~Lubicz$^e$,
+ M.~Panero$^f$,
+ F.~Sanfilippo$^b$,
+ S.~Simula$^b$,
+ A~Smecca$^f$,
+ N.~Tantalo$^a$
+}\\ 
+
+\textit{$^a$ Dipartimento di Fisica and INFN, Universit\`a di Roma ``Tor Vergata", Via della Ricerca Scientifica 1, I-00133 Roma, Italy}\\
+\textit{$^b$ Instituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Via della Vasca Navale 84, I-00146 Rome, Italy }\\
+\textit{$^c$ Helmholtz-Institut f{\"u}r Strahlen- und Kernphysik (Theorie) and Bethe Center for Theoretical Physics, Universit{\"a}t Bonn}\\
+\textit{$^d$ High Performance Computing and Analytics Lab, University of Bonn, 53115 Bonn, Germany} \\
+\textit{$^e$ Dipartimento di Matematica e Fisica, Universit\`a Roma Tre and INFN, Sezione di Roma Tre, Via della Vasca Navale 84, I-00146 Rome, Italy} \\
+\textit{$^f$Dipartimento di Fisica, Università di Torino \& INFN, Sezione di Torino, Via Pietro Giuria 1, I-10125 Turin, Italy}\\
+
+\vfill
+
+\newpage
+
+\vfill
+\tableofcontents
+\vfill
+
+\newpage
+
+\section{Introduction}
+
+\input{introduction.tex}
+
+
+\section{Preliminary Work}
+\rule{\textwidth}{0.4pt} 
+
+\input{Preliminary_Work.tex}
+
+
+\section{Description of the Project}
+\rule{\textwidth}{0.4pt}
+\subsection{Project Details}
+
+\input{project_details.tex}
+%\textit{Describe your research project in detail, structured in sub-projects, if applicable. Include discussion of the scientific questions that you are planning to address and the overall scientific goals of the project. It is important that you describe the innovative aspects, impact and topicality of the proposal.}
+%\begin{itshape}
+%\begin{itemize}\setlength{\itemsep}{-2pt}
+%  \item Scientific questions you want to address
+%  \item Scientific objectives
+%  \item Computational objectives
+%  \item Approach and expected outcome
+%  \item Expected impact on the research area
+%  \item Scientific and technical innovation potential, impact and topicality
+%  \item Progress beyond the state-of-the-art
+%\end{itemize}
+%\end{itshape}
+%
+%\subsubsection{Sub-project 1}
+%\subsubsection{Sub-project 2}
+%\textit{...}\\
+
+
+\subsection{Review Processes}
+
+We give here the projects that are closely connected to the present
+proposal and which are funded through third party grants.
+
+
+\textbf{C. Urbach:} \textit{Symmetries and the Emergence of Structure
+	in QCD}, Collaborative research center
+CRC110\footnote{\protect\url{https://crc110.hiskp.uni-bonn.de}}
+
+\section{Numerical Methods and Algorithms} 
+
+
+\input{Numerical_Methods.tex}
+
+
+\section{Computer Resources}
+
+\input{performance}
+
+
+\input{justification_of_resources_requested}
+
+\section{Resource Management and Work Schedule}
+\rule{\textwidth}{0.4pt}
+\input{resource_management}
+
+
+\section{Key Personnel and Experiences}
+\rule{\textwidth}{0.4pt}\\
+\\
+\input{key_personnel_and_experiences.tex}
+\section{Bibliographic References}
+
+\footnotesize{
+	\bibliography{bibliography}
+}
+
+\end{document}
