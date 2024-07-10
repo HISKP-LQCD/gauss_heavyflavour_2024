@@ -46,6 +46,17 @@ C.~Alexandrou et~al.,
   twisted-mass fermions}},
  Phys. Rev. D, {\bf 107}, no. 7, 074506, 2023.
 
+\bibitem{ETM:2009sed}
+B.~Blossier et~al.,
+ {\em {A Proposal for B-physics on current lattices}},
+ JHEP, {\bf 04}, 049, 2010.
+
+\bibitem{ETM:2016nbo}
+A.~Bussone et~al.,
+ {\em {Mass of the b quark and B -meson decay constants from N$_f$=2+1+1
+  twisted-mass lattice QCD}},
+ Phys. Rev. D, {\bf 93}, no. 11, 114505, 2016.
+
 \bibitem{ParticleDataGroup:2020ssz}
 P.~A. Zyla et~al.,
  {\em {Review of Particle Physics}},
@@ -72,12 +83,6 @@ R.~Frezzotti and G.C. Rossi,
  {\em {Chirally improving Wilson fermions. 1. O(a) improvement}},
  JHEP, {\bf 0408}, 007, 2004.
 
-\bibitem{Dimopoulos:2021qsf}
-Petros Dimopoulos, Roberto Frezzotti, Marco Garofalo, and Silvano Simula,
- {\em {$K$- and $D_{(s)}$-meson leptonic decay constants with physical light,
-  strange and charm quarks by ETMC}},
- PoS, {\bf LATTICE2021}, 472, 2021.
-
 \bibitem{Alexandrou:2018egz}
 Constantia Alexandrou et~al.,
  {\em {Simulating twisted mass fermions at physical light, strange and charm
@@ -88,11 +93,6 @@ Constantia Alexandrou et~al.,
 R.~Frezzotti and G.C. Rossi,
  {\em {Chirally improving Wilson fermions. II. Four-quark operators}},
  JHEP, {\bf 0410}, 070, 2004.
-
-\bibitem{ETM:2009sed}
-B.~Blossier et~al.,
- {\em {A Proposal for B-physics on current lattices}},
- JHEP, {\bf 04}, 049, 2010.
 
 \bibitem{Allton:1993wc}
 C.~R. Allton et~al.,
