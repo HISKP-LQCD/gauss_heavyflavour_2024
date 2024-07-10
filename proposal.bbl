@@ -83,6 +83,12 @@ R.~Frezzotti and G.C. Rossi,
  {\em {Chirally improving Wilson fermions. 1. O(a) improvement}},
  JHEP, {\bf 0408}, 007, 2004.
 
+\bibitem{ETM:2011zey}
+P.~Dimopoulos et~al.,
+ {\em {Lattice QCD determination of $m_b, f_B$ and $f_{Bs}$ with twisted mass
+  Wilson fermions}},
+ JHEP, {\bf 01}, 046, 2012.
+
 \bibitem{Alexandrou:2018egz}
 Constantia Alexandrou et~al.,
  {\em {Simulating twisted mass fermions at physical light, strange and charm
@@ -93,6 +99,12 @@ Constantia Alexandrou et~al.,
 R.~Frezzotti and G.C. Rossi,
  {\em {Chirally improving Wilson fermions. II. Four-quark operators}},
  JHEP, {\bf 0410}, 070, 2004.
+
+\bibitem{Chetyrkin:1999pq}
+K.~G. Chetyrkin and A.~Retey,
+ {\em {Renormalization and running of quark mass and field in the
+  regularization invariant and MS-bar schemes at three loops and four loops}},
+ Nucl. Phys. B, {\bf 583}, 3--34, 2000.
 
 \bibitem{Allton:1993wc}
 C.~R. Allton et~al.,
