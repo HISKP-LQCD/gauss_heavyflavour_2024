@@ -6,18 +6,18 @@ in \Cref{sec:proj} in the table below.
 \subsubsection{Run types \label{sec:runtypes}}
 
 
-For each ensemble our plan is to compute  one quark propagators for the strange
-and five heavy quark (above the charm mass) at zero momentum, the strange and the heavy propagator 
+For each ensemble, we plan to compute  one quark propagator for the strange
+and five for the heavy quark (above the charm mass) all at zero momentum, the strange and the heavy propagator 
 will be computed with the MG solver, thus one setup of the MG is needed and then one update for each 
 heavy quark. 
 The source used will be a stochastic smeared source.
 Then we compute the sequential propagator necessary to build the four-point function in Fig.~\ref{fig:4pt},
-first inverting the list of heavy Dirac operator using as source strange propagator with a pseudo-scalar
-insertion and smeared. Then the resulting vectors will be used as a source for a further inversion of the light u-quark and for the c-quark for 10 values of momenta with the 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$). The last set of sequential inversions (u-quark of Fig.~\ref{fig:4pt} and the equivalent substituting the u-quark with an c-quark) require one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum.
-In addition, for creating the two point function in Fig.~\ref{fig:4pt} for the $B$ meson (necessary to construct the ration of Eq.~\ref{eq:ratio_Q}) one
-inversion for the light quark with zero momentum is necessary, in this case the MG setup can be then reused for the strange quark inversion.
-All the previous set of inversion will be repeated 4 times for the spin dilution and for a series of different stochastic sources.
-The number of stochastic sources is scaled with the volume in order to keep the error of the different ensembles constant. We measured that the smearing and the contraction time account for the 15\% of our running time and we add it to the cost.
+first inverting the list of heavy Dirac operators using as source strange propagator with a pseudo-scalar
+insertion and smeared. Then the resulting vectors will be used as a source for a further inversion of the light u-quark and for the c-quark for 10 values of momenta with the 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$). The last set of sequential inversions (u-quark of Fig.~\ref{fig:4pt} and the equivalent substituting the u-quark with a c-quark) require one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum.
+In addition, for creating the two-point function in Fig.~\ref{fig:4pt} for the $B$ meson (necessary to construct the ration of Eq.~\ref{eq:ratio_Q}) one
+inversion for the light quark with zero momentum is necessary, in this case, the MG setup can be then reused for the strange quark inversion.
+All the previous sets of inversion will be repeated 4 times for the spin dilution and for a series of different stochastic sources.
+The number of stochastic sources is scaled with the volume to keep the error of the different ensembles constant. We measured that the smearing and the contraction time account for 15\% of our running time and we added it to the cost.
 
 In the table below we refer to the following types of runs:
 \begin{enumerate}

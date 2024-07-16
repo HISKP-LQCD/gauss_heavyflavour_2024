@@ -21,7 +21,7 @@
 
 
 %All performance results have been measured on JUWELS Booster
-About 90\% of the total run-time in the different parts of our research proposal is spent in QUDA's MG solver, the scaling behavior of which depends on the performance of the fine-grid Dirac operator ($D$) in double and single precision, as well as the intermediate-grid ($D_c$) and coarse-grid ($D_{cc}$) Dirac operators in half precision, which all have slightly different scaling behaviors due to the amount of parallelism that can be exposed on each grid.
+About 90\% of the total run-time in the different parts of our research proposal is spent in QUDA's MG solver, the scaling behaviour of which depends on the performance of the fine-grid Dirac operator ($D$) in double and single precision, as well as the intermediate-grid ($D_c$) and coarse-grid ($D_{cc}$) Dirac operators in half precision, which all have slightly different scaling behaviour due to the amount of parallelism that can be exposed on each grid.
 On many nodes, only a small part of the solver time is spent in other kernels such as linear algebra.
 Because the MG algorithm has substantial device memory requirements, it cannot be run as a whole on few GPUs and then scaled to many GPUs.
 Similarly, it cannot be weak-scaled using synthetic data as the amount of time spent in each kernel depends on the physical properties of the Dirac operator to be inverted (and the associated gauge field).
@@ -33,12 +33,12 @@ Therefore, we demonstrate scalability via
 \end{itemize}
 As depicted in \Cref{fig:quda_dirac_strong}, the scaling of the kernels involving the full-sized problem is close ideal up to a large number of nodes.
 Only the coarse-grid Dirac operators, $D_c$ and $D_{cc}$, do not show a good scaling due to the significantly reduced problem size.
-The multigrid solver is the only component affected by it and its scaling is sub-optimal due to the fact that most of the time is spent on the coarse-grid kernels. For this reason we use in our calculations the smallest number of nodes where our full problem can fit and run in parallel multiple jobs on different configurations.
-The nodes we will used are reported in Table~\ref{tab:MGsolver}, respect to the
-previous stage of this project we manage to optimize the memory footprint
+The multigrid solver is the only component affected by it and its scaling is sub-optimal because most of the time is spent on the coarse-grid kernels. For this reason, we use in our calculations the smallest number of nodes where our full problem can fit and run in parallel multiple jobs on different configurations.
+The nodes we will use are reported in Table~\ref{tab:MGsolver}, with respect to the
+previous stage of this project we optimise the memory footprint
 of our run such that we can run in half of the nodes for the ensembles cB211.072.64
 and cC211.06.80 resulting in more efficient runs.
-In our runs the majority of the time will be spend in the setup of the MG
+In our runs, the majority of the time will be spent in the setup of the MG
 which will only be necessary for the first inversion for each values of the momentum.
 %We will use 8 nodes for the cB211.072.64 ensemble, 24 nodes for the  , 20 nodes for the cC211.06.90 ensemble
 %and 96 for the cD211.054.96 ensemble.
