@@ -9,7 +9,7 @@ spin dilution at $t_{src}$ with a sequential inversion through the
 sink $B_s$-meson vertex at $t_{snk}$ and a second sequential inversion
 at $t_2$ with the weak current and a momentum injection ${\bf q}$.
 The sequential inversions are labelled with a semicircular arrow next to
-the vertices in Fig.~\ref{fig:4pt}. We plan to have five values of the
+the vertices in Fig.~\ref{fig:4pt}. We plan to have ten values of the
 momenta to cover all the physical region.
 
 In order to isolate the ground state, the two currents in the
@@ -60,6 +60,15 @@ As a result we will not make use of the coarse-grid deflated variant of the solv
 Still, the resulting solver is in a single solve much faster than the highly optimised implementation of the mixed-precision conjugate gradient (CG) algorithm in QUDA.
 This is illustrated in \Cref{fig:multi-grid}, where we compare the time to solution between MG and mixed-precision CG for a range of valence quark masses ranging from the charm quark mass to the physical light quark mass.
 The results obtained on a $64^3 \cdot 128$ lattice on eight JUWELS Booster nodes indicate that at the physical light quark mass, MG is more than 200 times faster than CG.
+An other advantage of the MG  is that it provides reliable solutions
+of the Dirac equation for heavy quark, as compared to a diffusive
+solver like conjugate-gradient, the solution is found simultaneously at the fine/coarse scales. 
+The MG solver was already used in \cite{Frezzotti:2024kqk} and here we share many authors with it,
+in particular it was validated that the MG solution reproduces the
+rapidly decreasing behavior of the heavy propagator as a function of the distance with an 
+internal check adopting extended precision to carry out the validation of the Dirac equation solution,
+employing algorithms which mitigate the error accumulation when carrying out the global reductions
+(i.e. Kahan summation).
 The disadvantage of MG solvers, however, is that they strong scale poorly due to the significantly smaller coarse grid system.
 
 \begin{SCfigure}[0.5]

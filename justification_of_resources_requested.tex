@@ -6,66 +6,74 @@ in \Cref{sec:proj} in the table below.
 \subsubsection{Run types \label{sec:runtypes}}
 
 
-For each ensemble our plan is to compute  2 quark propagators for the strange and charm  at zero momentum, the strange propagator needs a MG 
-setup while the charm can be computed with CG.
-The source used will be a stochastic smeared source. 
-Then we compute the sequential propagator, necessary to build the four-point function in Fig.~\ref{fig:4pt}, first inverting a charm Dirac operator using as source strange propagator with a pseudo-scalar insertion and smeared. Then the resulting vector will be used as a source for a further inversion of the light d-quark and for the s-quark for 10 values of momenta with the 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$). The last set of sequential inversions (d-quark of Fig.~\ref{fig:4pt} and the equivalent substituting the d-quark with an s-quark) require one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum.
-In addition for creating the two point function in Fig.~\ref{fig:4pt} for the $D$ meson one
+For each ensemble our plan is to compute  one quark propagators for the strange
+and five heavy quark (above the charm mass) at zero momentum, the strange and the heavy propagator 
+will be computed with the MG solver, thus one setup of the MG is needed and then one update for each 
+heavy quark. 
+The source used will be a stochastic smeared source.
+Then we compute the sequential propagator necessary to build the four-point function in Fig.~\ref{fig:4pt},
+first inverting the list of heavy Dirac operator using as source strange propagator with a pseudo-scalar
+insertion and smeared. Then the resulting vectors will be used as a source for a further inversion of the light u-quark and for the c-quark for 10 values of momenta with the 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$). The last set of sequential inversions (u-quark of Fig.~\ref{fig:4pt} and the equivalent substituting the u-quark with an c-quark) require one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum.
+In addition, for creating the two point function in Fig.~\ref{fig:4pt} for the $B$ meson (necessary to construct the ration of Eq.~\ref{eq:ratio_Q}) one
 inversion for the light quark with zero momentum is necessary, in this case the MG setup can be then reused for the strange quark inversion.
-All the previous set of inversion will be repeated 4 times for the spin dilution and for a series of different stochastic sources. 
-The number of stochastic sources is scaled with the volume in order to keep the error of the different ensembles constant. We measured that the smearing and the contraction time account for the 10\% of our running time and we add it to the cost.
+All the previous set of inversion will be repeated 4 times for the spin dilution and for a series of different stochastic sources.
+The number of stochastic sources is scaled with the volume in order to keep the error of the different ensembles constant. We measured that the smearing and the contraction time account for the 15\% of our running time and we add it to the cost.
 
 In the table below we refer to the following types of runs:
 \begin{enumerate}
-	\item \label{rt:cAp64} 10 stochastic sources for the cAp211.077.64
-	\item \label{rt:cB64} 10 stochastic sources for the cB211.072.64
-	\item \label{rt:cB96} 3 stochastic sources for the cB211.072.96
-	\item \label{rt:cC80}  5 stochastic sources for the cC211.06.80
-	\item \label{rt:cC112} 2 stochastic sources for the cC211.06.112	
-	\item \label{rt:cD96}  3 stochastic sources for the cD211.054.96
+	% \item \label{rt:cAp64} 10 stochastic sources for the cAp211.077.64
+	\item \label{rt:cB48} 10 stochastic sources for 400 gauge configurations for the cB211.072.64
+	\item \label{rt:cB64} 5 stochastic sources for 400 gauge configurations the cB211.072.64
+	\item \label{rt:cB96} 3 stochastic sources for 400 gauge configurations the cB211.072.96
+	\item \label{rt:cC80} 3 stochastic sources for 400 gauge configurations the cC211.06.80
+	      % \item \label{rt:cC112} 2 stochastic sources for the cC211.06.112	
+	\item \label{rt:cD96}  3 stochastic sources 400 gauge configurations for the cD211.054.96
+	\item  \label{rt:cE112} 2 stochastic sources 400 gauge configurations for the cE211.044.112
 \end{enumerate}
-We plan to have a job for each configuration and each value of the momentum, then 
+We plan to have a job for each configuration and each value of the momentum, then
 all the stochastic sources will be processed in the same job run.
 
 \begin{center}
 	{\small
 		\begin{tabular}{lllccccr} \hline\hline
-			Sub- &
-			Type &
-			Problem &
-			\# runs &
-			\# steps/ &
-			Wall time/ &
-			\# cores/ &
-			Total \\
-			project &
-			of run &
-			size  &
-			&
-			run &
+			Sub-         &
+			Type         &
+			Problem      &
+			\# runs      &
+			\# steps/    &
+			Wall time/   &
+			\# cores/    &
+			Total                                                                                                                \\
+			project      &
+			of run       &
+			size         &
+			             &
+			run          &
 			step [hours] &
-			run &
-			[core-h] \\
+			run          &
+			[core-h]                                                                                                             \\
 			\hline\hline
 			%%%%
 			%%%%
 			%%%%
-			1-2 &(\ref{rt:cAp64}) &	$64^3\times 128$ &	$10\times 400$ &	1 &	1.63 &	8 nodes &			$2.5 \times 10^6$ \\
-			&(\ref{rt:cB64}) &	$64^3\times 128$ &	$10\times 400$ &	1 &	1.63 &	8 nodes &			$2.5 \times 10^6$ \\
-			&(\ref{rt:cB96}) &	$96^3\times 192$ &	$10\times 400$ &	1 &	0.50 &	24 nodes &			$2.3 \times 10^6$ \\			
-			&(\ref{rt:cC80}) &	$80^3\times 160$ &	$10\times 400$ &	1 &	0.78 &	20 nodes &			$3.0 \times 10^6$ \\			
-			&(\ref{rt:cC112}) &	$112^3\times 224$ &	$10\times 400$ &	1 &	0.32 &	56 nodes &			$3.4 \times 10^6$ \\			
-			&(\ref{rt:cD96}) &	$96^3\times 192$ &	$10\times 400$ &	1 &	0.50 &	24 nodes &			$2.3 \times 10^6$ \\
+			% 1-2          & (\ref{rt:cAp64}) & $64^3\times 128$  & $10\times 400$ & 1 & 1.63 & 8 nodes  & $2.5 \times 10^6$       \\
+			1-2          & (\ref{rt:cB48})  & $64^3\times 128$  & $10\times 400$ & 1 & 1.63 & 2 nodes  & $0.6 \times 10^6$       \\
+			             & (\ref{rt:cB64})  & $64^3\times 128$  & $10\times 400$ & 1 & 1.63 & 4 nodes  & $1.0 \times 10^6$       \\
+			             & (\ref{rt:cB96})  & $96^3\times 192$  & $10\times 400$ & 1 & 0.50 & 24 nodes & $3.1 \times 10^6$       \\
+			             & (\ref{rt:cC80})  & $80^3\times 160$  & $10\times 400$ & 1 & 0.78 & 10 nodes & $1.4 \times 10^6$       \\
+			            %  & (\ref{rt:cC112}) & $112^3\times 224$ & $10\times 400$ & 1 & 0.32 & 56 nodes & $3.4 \times 10^6$       \\
+			             & (\ref{rt:cD96})  & $96^3\times 192$  & $10\times 400$ & 1 & 0.50 & 24 nodes & $3.0 \times 10^6$       \\
+						 & (\ref{rt:cE112})  & $112^3\times 224$  & $10\times 400$ & 1 & 0.50 & 56 nodes & $4.7 \times 10^6$       \\
 			%multyply by 10/9 for smearing and contractions 			
 			%%%
 			%%%
 			%%%
 			\hline\hline
-			TOTAL & & & & & & & $16 \times 10^6$ core-h\\
+			TOTAL        &                  &                   &                &   &      &          & $14\times 10^6$ core-h \\
 		\end{tabular}
 	}
 \end{center}
 \bigskip
-We thus ask for a total amount of \textbf{16 Mcore-h}, equivalent to \textbf{96192 EFLOP}\footnote{conversion factor 6012 EFLOP / Mcore-h}  on the \textbf{JUWELS-Booster} module at JSC.
+We thus ask for a total amount of \textbf{14 Mcore-h}, equivalent to \textbf{84168 EFLOP}\footnote{conversion factor 6012 EFLOP / Mcore-h}  on the \textbf{JUWELS-Booster} module at JSC.
 %%% \textit{(0.5 to 1 page)}
 
