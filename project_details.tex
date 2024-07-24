@@ -1,12 +1,11 @@
 \label{sec:proj}
-The core of our project is the calculation of semi-leptonic decays of the $B_s$ mesons,
-to do so we need to first determine the quark mass value $m_b$.
+The core of our project is the calculation of inclusive semileptonic decays of the $B$ and $B_s$ mesons, to do so we need to first determine the physical $b$-quark point.
 The raw data produced by the HPC facilities
 contributes to the determination of
-the total inclusive decay rate for the process $B_s \to X\ell\nu$
-and the mass of the $B$ meson $M_B$. The simulations
-will be done at several values of an heavy quark mass and the determination and
-subsequent extrapolation to $m_b$ will be done in the analysis.
+the $B$ and $B_s$ meson mass and to 
+the total inclusive decay rate for the process $B_s \to X\ell\bar\nu$.
+The simulations
+will be done at six values of an heavy quark mass in a rage from 1 to 3.5 times the charm quark mass. The determination and subsequent extrapolation to $m_b$ will be done in the analysis.
 
 The computation proposed here will use the same ensembles of the previous stage of the project
 i.e. Wilson-clover twisted
@@ -31,19 +30,20 @@ this reference.
 \subsection{Sub-project 1: Bottom quark mass $m_b$}
 \label{sec:mb}
 
-We can extract the mass of the $B$ pseudo-scalar ($M_{B_s}$) meson, with one bottom quark $q$
-and a strange $s$,
+We can extract the mass of the $B$ and $B_s$ pseudo-scalar meson ($M_{B}$ and $M_{B_s}$) meson, 
 from the right diagram of Figure~\ref{fig:4pt} representing the two point function
 \begin{equation}
-  \langle B_s(\bm{0},t) B_s^\dagger({\bf 0},0)\rangle\xrightarrow{t>>a, (T-t)>>a}
-  \frac{1}{2M_B}|\langle 0 | B_s | B_s\rangle|^2\left(e^{-M_{B_s} t}+e^{-M_{B_s}(T-t)}\right)
+  \langle B_{(s)}(\bm{0},t) B_{(s)}^\dagger({\bf 0},0)\rangle\xrightarrow{t>>a, (T-t)>>a}
+  \frac{1}{2M_{B_{(s)}}}|\langle 0 | B_{(s)} | B_{(s)}\rangle|^2\left(e^{-M_{B_{(s)}} t}+e^{-M_{B_{(s)}}(T-t)}\right)
   \, \label{eq:Mb}
 \end{equation}
-with the operator $B_s({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 s({\bf x},t)$.
+with the operator $B({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 u({\bf x},t)$
+and $B_s({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 s({\bf x},t)$.
 Due to present day computer limitations, it is not possible, however, to work directly
 with the b-quarks propagating on the simulated lattice, the ratio method approach the
 b-quark mass by interpolating from the charm region to the asymptotic infinite mass.
-Thus, we compute Eq.~(\ref{eq:Mb}) replacing the b quark with several lighter quarks h
+Thus, we compute Eq.~(\ref{eq:Mb}) replacing the $b$ quark with six heavy quarks $h$
+in the range of $m_h\in [m_c,3.5m_c]$
 and for each we compute the quantity
 \begin{equation}
   Q_m = \frac{M_{hs}}{M_{h\ell}^\gamma M_{cs}^{(1-\gamma)}}
@@ -56,7 +56,7 @@ and a strange quark. The parameter $\gamma$ is a free parameter in the range  $[
 The asymptotic behavior can be computed using HQET
 \begin{equation}
   \lim_{ m^{pole}_h\to \infty}
-  \frac{M_{hs}}{( m^{pole}_h)^{(1-\gamma)} M_{h\ell}^\gamma}=\mbox{text}
+  \frac{M_{hs}}{( m^{pole}_h)^{(1-\gamma)} M_{h\ell}^\gamma}=\mbox{const.}
   \label{eq:yHQFTlim}
 \end{equation}
 where $ m^{pole}_h$ is the pole mass of the heavy quark.
@@ -97,19 +97,22 @@ the experimental value of $M_{B_s}/(M_{B}^\gamma M_{D_s}^{(1-\gamma)})$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Sub-project 2: total inclusive decay rate $B_s \to X\ell\nu$}
+\subsection{Sub-project 2: total inclusive decay rate $B_s \to X\ell\bar\nu$}
 
-By using the optical theorem, the total inclusive decay rate for the
-process $B_s \to X\ell\nu$ can be written as
+By using the optical theorem, the semileptonic decay of a $B$ and $B_s$ mesons to charmed
+final states $X_c$ with a pair of massless leptons $B(B_s) \to X_c\ell\bar\nu$ can be written as
 \begin{equation}
-  \Gamma = G^2_F\left\{ |V_{bu} |^2 \Gamma_{bu} + |V_{bc} |^2 \Gamma_{bc} + |V_{su} |^2 \Gamma_{bu}
-  \right\}\,,
+  % \Gamma = G^2_F\left\{ |V_{bu} |^2 \Gamma_{bu} + |V_{bc} |^2 \Gamma_{bc} + |V_{su} |^2 \Gamma_{su}
+  % \right\}\,,
+  \Gamma_c = G^2_F |V_{bc} |^2 \Gamma_{bc}\,.
 \end{equation}
-where the different contributions to the right side correspond at the quark level
-to the weak transitions $b \to u$, $b \to c$ and $s \to u$ respectively. Each contribution can be written as
+% where the different contributions to the right side correspond at the quark level
+% to the weak transitions $b \to u$, $b \to c$ and $s \to u$ respectively. Each contribution can be written as
+This decay may occur with the quark-level decay process $b \to c\ell \bar\nu$, it's important to notice that in the case of the $B$ and $B_s$ meson this channel is known experimentally while 
+in the case of the $D_s$ meson only the sum over all weak transition is known. The decay rate divided by the square of the  Fermi constant $G_F$ and the CKM angle $V_{bc}$ can be written as
 \begin{equation}\label{eq:Gamma_fg}
-  \Gamma_{fg}=\int \frac{d^3p_\nu}{(2\pi)^32E_\nu}\frac{d^3p_\ell}{(2\pi)^32E_\ell}
-  L_{\mu\nu}(p_\ell, p_\nu) H^{\mu\nu}_{fg}(p,p-p_\ell-p_\nu)\,,
+  \Gamma_{bc}=\int \frac{d^3p_\nu}{(2\pi)^32E_\nu}\frac{d^3p_\ell}{(2\pi)^32E_\ell}
+  L_{\mu\nu}(p_\ell, p_\nu) H^{\mu\nu}_{bc}(p,p-p_\ell-p_\nu)\,,
 \end{equation}
 where the leptonic tensor is given by
 \begin{equation}
@@ -119,21 +122,24 @@ where the leptonic tensor is given by
 \end{equation}
 while the hadronic tensor reads
 \begin{equation}
-  H^{\mu\nu}_{fg}(p,p_X)=\frac{1}{2m_{D_s}}\langle D_s| J^\mu_{fg}(0)(2\pi)^4
-  \delta^4(\mathbb{P}-p_x) J^{\nu\dagger}_{gf} (0)| D_s\rangle\,.
+  H^{\mu\nu}_{bc}(p,p_X)=\frac{1}{2m_{D_s}}\langle D_s| J^\mu_{cb}(0)(2\pi)^4
+  \delta^4(\mathbb{P}-p_x) J^{\nu\dagger}_{cb} (0)| D_s\rangle\,.
 \end{equation}
-$\mathbb{P}$ is the QCD four momentum operator and $J_{gf}$ are the
-relevant Minkowski weak currents $J_{gf}^\mu(x)=i\bar
-  g(x)\gamma^\mu(1-\gamma_5)f(x)$.
-On the contrary of the decay of the $D_s$ meson here there are not disconnected
-diagrams. The contribution $\Gamma_{su}$ is suppressed by the integration over
-the phase space of \eqref{eq:Gamma_fg} thus it is expected to not contribute to the total
-decay rate. Moreover, the decay in the $su$ channel is only inclusive through $B_s-> B\ell\nu$.
-In this project we will focus only on the $bu$ and $bc$ channels while we will verify
-that the $su$ contribution is small in separate budget available on other machines.
-
-From now on we will drop the indices $fg$ and the procedure we are describing will be equivalent for the $bu$ and $bc$ contributions,
-moreover in the rest frame of the $B_s$ meson we have $p=(M_{B_s},\bm{0})$ thus we simplify the notation of
+$\mathbb{P}$ is the QCD four momentum operator and $J_{cb}$ are the
+relevant Minkowski weak currents $J_{cb}^\mu(x)=i\bar
+  c(x)\gamma^\mu(1-\gamma_5)b(x)$.
+In this channel there are not disconnected diagrams.
+% On the contrary of the decay of the $D_s$ meson here there are not disconnected
+% diagrams.
+% The contribution $\Gamma_{su}$ is suppressed by the integration over
+% the phase space of \eqref{eq:Gamma_fg} thus it is expected to not contribute to the total
+% decay rate. Moreover, the decay in the $su$ channel is only inclusive through $B_s-> B\ell\bar\nu$.
+% In this project we will focus only on the $bu$ and $bc$ channels while we will verify
+% that the $su$ contribution is small in separate budget available on other machines.
+From now on we will drop the indices $bc$ 
+% and the procedure we are describing will be equivalent for the $bu$ and $bc$ contributions,
+moreover 
+in the rest frame of the $B_{(s)}$ meson we have $p=(M_{B_{(s)}},\bm{0})$ thus we simplify the notation of
 $H^{\mu\nu}(p_X)\equiv H^{\mu\nu}_{fg}(p,p_X)$.
 The hadronic tensor $H_{\mu\nu}$ is
 the spectral density of the quantity
@@ -193,22 +199,23 @@ Therefore,
 \end{gather}
 The spectral reconstruction can be performed at the analysis stage. Thus,
 the main cost of this calculation is the production of the
-four-point function \eqref{eq:4pt}. In the case of the $b\to u$ weak
-transition the corresponding required Wick contractions are shown in
-Fig.~\ref{fig:4pt}.
+four-point function \eqref{eq:4pt}. 
+% In the case of the $b\to u$ weak
+% transition the corresponding required Wick contractions are shown in
+% Fig.~\ref{fig:4pt}.
 
 The renormalization constants necessary to renormalise the ratio of
 correlators \eqref{eq:ratio_4pt_2pt} $Z_A$ and $Z_V$ are already
-computed in previous work of ETMC~\cite{ExtendedTwistedMass:2022jpw}.
+computed in previous work of ETMC~\cite{ExtendedTwistedMass:2024myu}.
 
 \begin{figure}
   \centering
   \begin{tikzpicture}
     \begin{feynman}[scale=1.5]
-      \vertex[anchor=east,blob, fill=black!0!] (a) at (0,0) {\(B_s^\dagger\)};
+      \vertex[anchor=east,blob, fill=black!0!] (a) at (0,0) {\(B_{(s)}^\dagger\)};
       \vertex[anchor=east,blob, fill=black!0!]  (J1) at (1,0.8) {\(J_W\)};
       \vertex[anchor=east,blob, fill=black!0!] (J2) at (2.4,0.8) {\(J_W\)};
-      \vertex[anchor=west,blob, fill=black!0!] (b) at (3,0) {\(B_s\)};
+      \vertex[anchor=west,blob, fill=black!0!] (b) at (3,0) {\(B_{(s)}\)};
       \vertex (s1) at (3.4,-0.4) ;
       \vertex (s2) at (3.4, 0.4) ;
       \vertex (s3) at (2.6, 0.7) ;
@@ -216,23 +223,24 @@ computed in previous work of ETMC~\cite{ExtendedTwistedMass:2022jpw}.
 
       \diagram*{
       %				(a) --[fermion,  half right,looseness=0.5,edge label=$s$] (b);
-      (b) --[fermion, red, out=220, in=320,edge label=$s$,swap] (a);
+      (b) --[fermion, black, out=220, in=320,edge label=$u(s)$,swap] (a);
 
-      (a) --[fermion, green!40!black, edge label=$b$] (J1) ;
-      (J1) --[fermion, blue, edge label=$u$, reversed momentum'=$\bf{q}$] (J2);
-      (J2) --[fermion, green!40!black ,edge label=$b$] (b);
+      (a) --[fermion, blue, edge label=$b$] (J1) ;
+      (J1) --[fermion, sand, edge label=$c$, reversed momentum'=$\bf{q}$] (J2);
+      (J2) --[fermion, blue ,edge label=$b$] (b);
       (s1) --[->, half right, edge label=sequential,swap] (s2);
       (s3) --[->, half right, edge label=sequential,swap] (s4);
       };
     \end{feynman}
     \begin{feynman}[scale=1.5]
-      \vertex[anchor=east,blob, fill=black!0!] (a) at (6.5,0) {\(B_s^\dagger\)};
-      \vertex[anchor=west,blob, fill=black!0!] (b) at (9.5,0) {\(B_s\)};
+      \vertex[anchor=east,blob, fill=black!0!] (a) at (6.5,0) {\(B_{(s)}^\dagger\)};
+      \vertex[anchor=west,blob, fill=black!0!] (b) at (9.5,0) {\(B_{(s)}\)};
 
       \diagram*{
       %				(a) --[fermion,  half right,looseness=0.5,edge label=$s$] (b);
-      (b) --[fermion, red, out=220, in=320,edge label=$s$,swap] (a);
-      (a) --[fermion, green!40!black, out=40, in=140,edge label=$b$,swap] (b);
+      (b) --[fermion, black, out=220, in=320,edge label=$u(s)$,swap] (a);
+      (a) --[fermion, blue, out=40, in=140,edge label=$b$,swap] (b);
+      % (a) --[fermion, green!40!black, out=40, in=140,edge label=$b$,swap] (b);
       };
     \end{feynman}
   \end{tikzpicture}
@@ -244,7 +252,9 @@ A similar analysis was done in the first stage of the project and the result
 are shown in Fig.~\ref{fig:dGammadq_Ds} already extrapolated to the continuum and
 to $\sigma\to0$.
 The extra difficulties will come from the fact we can not simulate directly at the
-physical $b$-quark, but the decay rate will be computed for a series of masses lighter the $b$-quark and the result extrapolated to the physical $b$ mass computed in the sub-project 1 of section~\ref{sec:mb}.
+physical $b$-quark, but the decay rate will be computed 
+using the same set of heavy quark mass as in the sub-project 1 of section~\ref{sec:mb}
+and then extrapolated to the physical $b$ mass.
 
 % As mentioned already, we have performed a first exploratory
 % investigation of the differential decay rate on ensemble cB211.072.64
@@ -272,7 +282,7 @@ physical $b$-quark, but the decay rate will be computed for a series of masses l
   \centering
   \includegraphics[scale=0.8]{plots/final_DgammaDq2.pdf}
   \caption{Preliminary values of the differential decay rate of
-    $D_s\to X\ell\nu$.
+    $D_s\to X\ell\bar\nu$.
     the contribution form the $cd$ channel (in red) is observed to be smaller than
     the contribution form the $cd$ channel and (in blue) mainly due to $V_{cs}>V_{cd}$ }
   \label{fig:dGammadq_Ds}

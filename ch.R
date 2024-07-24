@@ -77,13 +77,29 @@ Nth<- 10
 spin_dilution<- 4
 ###################################### bu channel
 ##### all Nh in the same run
-df$time_1source_1th_1conf <-  df$setup + df$s * spin_dilution 
+### set + -l- + up + -s-
+df$time_1source_1th_1conf <-  df$setup + df$update + ( df$l + df$s) * spin_dilution 
+
+# heavy inversion, 3 because 1 direct and two sequential
+## (update + (-h-   +  -l-h- + -l-s- )*spin_dil )*Nh
+df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + (df$update  + df$c*3*spin_dilution)*Nh
+
+# charm inversion, setup because of th, 8 because of Vmu+ Amu,
+## (setup +  (-l-h-c- + -l-s-c-)*8*spin_dil ) *Nh
+df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$setup + df$c*2*8*spin_dilution*Nh
+
+
+## the bu channel
+## (update(actually will be a setup and an update in the bc channel) +  (-l-h-c- + -l-s-c-)*8*spin_dil ) *Nh
+# df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$update + df$l*2*8*Nh*spin_dilution
 
 # for the charm we need an update every time because r change 
-df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$update * 2 * Nh + df$c * spin_dilution * 2 * Nh
+# df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$update * 2 * Nh + df$c * spin_dilution * 2 * Nh
 
-# light
-df$time_1source_1th_1conf <-  df$time_1source_1th_1conf +  df$setup + df$l*spin_dilution * 8 * Nh
+# # light
+# df$time_1source_1th_1conf <-  df$time_1source_1th_1conf +  df$setup + df$l*spin_dilution * 8 * Nh
+
+
 
 
 ##### one run x Nh
@@ -93,13 +109,13 @@ df$time_1source_1th_1conf <-  df$time_1source_1th_1conf +  df$setup + df$l*spin_
 
 ##################################### bc channel
 ##### in the same run
-df$time_1source_1th_1conf <- df$time_1source_1th_1conf + df$update * Nh + df$c*spin_dilution * 8 * Nh
+#df$time_1source_1th_1conf <- df$time_1source_1th_1conf + df$update * Nh + df$c*spin_dilution * 8 * Nh
 ##### different run x chan
 # df$time_1source_1th_1conf <-  df$time_1source_1th_1conf +(df$update + df$s + df$c * 2 * Nh +
 #                                 df$setup + df$c * 8 * Nh )
 
 ################################## light a zero momentum
-df$time_1source_1th_1conf <- df$time_1source_1th_1conf +df$setup + df$l *spin_dilution
+# df$time_1source_1th_1conf <- df$time_1source_1th_1conf +df$setup + df$l *spin_dilution
 
 df$time <- df$time_1source_1th_1conf * df$scr * Nth  * df$confs 
 
@@ -110,6 +126,13 @@ df$Mch <- df$Mch * 100.0 / 85.0
 print(df$Mch )
 print(sum(df$Mch))
 
-aa<-round(df$Mch, digit=1)
+# aa<-round(df$Mch, digit=1)
+# print(aa)
+# print(sum(aa))
+
+## rounding up 
+aa<-ceiling(df$Mch*10)/10 
 print(aa)
 print(sum(aa))
+
+df$wallt<-df$Mch *1e+6/(10*400*df$nodes*48)

@@ -5,18 +5,22 @@ in \Cref{sec:proj} in the table below.
 
 \subsubsection{Run types \label{sec:runtypes}}
 
+For each ensemble we plan to compute the four-point function of Fig.~\ref{fig:4pt} in the followign way: we start computing the quark propagator of the spectator $u$ and $s$, this requires 
+one MG setup for the $u$ and then un update for the strange.
+Then we compute the heavy quark propagators, one direct and two sequential (on the $u$ and $s$ propagators), for each heavy of the six heavy quark masses ($m_h=n m_c$ with $n=1, 1.5, 2, 2.5, 3, 3.5$). For each quark mass we need an update of the MG.
+The two sequential propagator produced so far, with 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$), will be used as a source for a further inversion of the $c$-quark, this requires one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum. 
 
-For each ensemble, we plan to compute  one quark propagator for the strange
-and five for the heavy quark ($m_h=n m_c$ with $n=1, 1.5, 2, 2.5, 3$) all at zero momentum, the strange and the heavy propagator 
-will be computed with the MG solver, thus one setup of the MG is needed and then one update for each 
-heavy quark. 
-The source used will be a stochastic smeared source.
-Then we compute the sequential propagator necessary to build the four-point function in Fig.~\ref{fig:4pt},
-first inverting the list of heavy Dirac operators using as source strange propagator with a pseudo-scalar
-insertion and smeared. Then the resulting vectors will be used as a source for a further inversion of the light u-quark and for the c-quark for 10 values of momenta with the 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$). The last set of sequential inversions (u-quark of Fig.~\ref{fig:4pt} and the equivalent substituting the u-quark with a c-quark) require one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum.
-In addition, for creating the two-point function in Fig.~\ref{fig:4pt} for the $B$ meson (necessary to construct the ration of Eq.~\ref{eq:ratio_Q}) one
-inversion for the light quark with zero momentum is necessary, in this case, the MG setup can be then reused for the strange quark inversion.
-All the previous sets of inversion will be repeated 4 times for the spin dilution and for a series of different stochastic sources.
+% For each ensemble, we plan to compute  one quark propagator for the strange
+% and five for the heavy quark ($m_h=n m_c$ with $n=1, 1.5, 2, 2.5, 3, 3.5$) all at zero momentum, the strange and the heavy propagator 
+% will be computed with the MG solver, thus one setup of the MG is needed and then one update for each 
+% heavy quark. 
+% The source used will be a stochastic smeared source.
+% Then we compute the sequential propagator necessary to build the four-point function in Fig.~\ref{fig:4pt},
+% first inverting the list of heavy Dirac operators using as source strange propagator with a pseudo-scalar
+% insertion and smeared. Then the resulting vectors will be used as a source for a further inversion of the light u-quark and for the c-quark for 10 values of momenta with the 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$). The last set of sequential inversions (u-quark of Fig.~\ref{fig:4pt} and the equivalent substituting the u-quark with a c-quark) require one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum.
+% In addition, for creating the two-point function in Fig.~\ref{fig:4pt} for the $B$ meson (necessary to construct the ration of Eq.~\ref{eq:ratio_Q}) one
+% inversion for the light quark with zero momentum is necessary, in this case, the MG setup can be then reused for the strange quark inversion.
+All the previous sets of inversion will be repeated 4 times for the spin dilution, 10 times for the different values of the momenta and for a series of different stochastic sources.
 The number of stochastic sources is scaled with the volume to keep the error of the different ensembles constant. We measured that the smearing and the contraction time account for 15\% of our running time and we added it to the cost.
 
 In the table below we refer to the following types of runs:
@@ -57,13 +61,13 @@ all the stochastic sources will be processed in the same job run.
 			%%%%
 			%%%%
 			% 1-2          & (\ref{rt:cAp64}) & $64^3\times 128$  & $10\times 400$ & 1 & 1.63 & 8 nodes  & $2.5 \times 10^6$       \\
-			1-2          & (\ref{rt:cB48})  & $64^3\times 128$  & $10\times 400$ & 1 & 1.63 & 2 nodes  & $0.6 \times 10^6$       \\
-			             & (\ref{rt:cB64})  & $64^3\times 128$  & $10\times 400$ & 1 & 1.63 & 4 nodes  & $1.0 \times 10^6$       \\
-			             & (\ref{rt:cB96})  & $96^3\times 192$  & $10\times 400$ & 1 & 0.50 & 24 nodes & $3.1 \times 10^6$       \\
-			             & (\ref{rt:cC80})  & $80^3\times 160$  & $10\times 400$ & 1 & 0.78 & 10 nodes & $1.4 \times 10^6$       \\
+			1-2          & (\ref{rt:cB48})  & $64^3\times 128$  & $10\times 400$ & 1 & 1.3 & 2 nodes  & $0.6 \times 10^6$       \\
+			             & (\ref{rt:cB64})  & $64^3\times 128$  & $10\times 400$ & 1 & 1.07 & 4 nodes  & $1.0 \times 10^6$       \\
+			             & (\ref{rt:cB96})  & $96^3\times 192$  & $10\times 400$ & 1 & 0.63 & 24 nodes & $3.0 \times 10^6$       \\
+			             & (\ref{rt:cC80})  & $80^3\times 160$  & $10\times 400$ & 1 & 0.68 & 10 nodes & $1.4 \times 10^6$       \\
 			            %  & (\ref{rt:cC112}) & $112^3\times 224$ & $10\times 400$ & 1 & 0.32 & 56 nodes & $3.4 \times 10^6$       \\
-			             & (\ref{rt:cD96})  & $96^3\times 192$  & $10\times 400$ & 1 & 0.50 & 24 nodes & $3.0 \times 10^6$       \\
-						 & (\ref{rt:cE112})  & $112^3\times 224$  & $10\times 400$ & 1 & 0.50 & 56 nodes & $4.7 \times 10^6$       \\
+			             & (\ref{rt:cD96})  & $96^3\times 192$  & $10\times 400$ & 1 & 0.64 & 24 nodes & $3.0 \times 10^6$       \\
+						 & (\ref{rt:cE112})  & $112^3\times 224$  & $10\times 400$ & 1 & 0.45 & 56 nodes & $5.0 \times 10^6$       \\
 			%multyply by 10/9 for smearing and contractions 			
 			%%%
 			%%%

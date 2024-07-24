@@ -37,7 +37,7 @@ systematic analysis in lattice QCD calculations was impractical.
 However, novel approaches have been put forward that allow one to address
 inclusive decays in lattice QCD, like the method described in
 Ref.~\cite{Gambino:2020crt} where the total decay rate for the process
-$D_s \to X\ell\nu$ and $B_s \to X\ell\nu$   is related to a smeared spectral
+$D_s \to X\ell\bar\nu$ and $B \to X\ell\bar\nu$   is related to a smeared spectral
 density that can be computed from an Euclidean four-point function in a finite
 volume~\cite{Hansen:2019idp} (see
 also \cite{Bulava:2019kbi,Bulava:2021fre,Gambino:2022dvu}). The computation of such
@@ -46,32 +46,40 @@ with high precision.
 The reconstruction of the spectral densities
 represents the main challenge that was already carried out for the $D_s$ meson
 in the previous computer time allocation of this project and the result were
-presented at the $41^{\mbox{st}}$ Lattice Conference at the University of Liverpool,
-and a paper is in preparation {\color{red} How to cite lattice talk?}.
+presented at the $41^{\mbox{st}}$ Lattice Conference at the University of Liverpool 
+\cite{talklatt2024_ale, talklatt2024_chr}
+and a paper is in preparation.
 
 With this continuation of the computer time application, we propose to extend
-the calculation of the total decay rate for the process $D_s \to X\ell\nu$ to the
-heavier $B_s$ meson computing  $B_s \to X\ell\nu$.
+the calculation of the total decay rate for the process $D_s \to X\ell\bar\nu$ to the
+heavier $B$ and $B_s$ meson computing  $B (B_s) \to X\ell\bar\nu$.
 As in the previous time contingent we are including the continuum limit
 using the $N_f=2+1+1$ clover twisted-mass action with physical
 values of up/down, strange and charm
 quarks~\cite{ExtendedTwistedMass:2021qui,ExtendedTwistedMass:2021gbo,ExtendedTwistedMass:2022jpw}.
 A necessary preliminary step to compute the inclusive decay rate of the $B_s$
-meson is the determination of the quark bottom mass $m_b$. This can be
+meson is the determination of the 
+$B$ physical point, i.e. the value of the bare parameter of the $b$-quark mass that reproduce the
+experimental value of the $B$-meson mass.  
+quark bottom mass $m_b$. This can be
 achieved using the ratio method proposed in \cite{ETM:2009sed}
 and successfully used in \cite{ETM:2016nbo}, where suitable ratios allow
 to reach the bottom quark sector by combining simulations around the
 charm-quark mass with an exactly known static limit.
+The bare quark mass can then be converted in to renormilized one my multiply 
+the appropriate renormalization constant $Z_p$ which computation by the ETMC 
+is under finalization.
 
 
 The continuation of the project to the $B_s$ meson is very interesting from the
 experimental side  where recent results from $B$ factories reveal some tension with
 SM predictions, but also exhibit puzzling discrepancies between exclusive and
 inclusive channels~\cite{ParticleDataGroup:2020ssz, HFLAV:2019otj, Gambino:2019sif}
+{\color{red} is there an update??}
 
 %The theoretical study of semileptonic decays of heavy mesons encode direct information on the modulus of the elements of the
 %Cabibbo-Kobayashi-Maskawa (CKM) quark mixing matrix \cite{Cabibbo:1963yz, Kobayashi:1973fv}. 
-%By using the optical theorem, the total inclusive decay rate for the process $D_s \to X\ell\nu$ can be written
+%By using the optical theorem, the total inclusive decay rate for the process $D_s \to X\ell\bar\nu$ can be written
 %$|V_{cd}|$, $|V_{cs}|$ and $|V_{us}|$
 %\begin{equation}
 %	\Gamma = G^2_F\left\{ |V_{cd} |^2 \Gamma_{cd} + |V_{cs} |^2 \Gamma_{cs} + |V_{us} |^2 \Gamma_{su}
