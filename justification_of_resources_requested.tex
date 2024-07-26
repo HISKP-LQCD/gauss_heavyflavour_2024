@@ -5,10 +5,10 @@ in \Cref{sec:proj} in the table below.
 
 \subsubsection{Run types \label{sec:runtypes}}
 
-For each ensemble we plan to compute the four-point function of Fig.~\ref{fig:4pt} in the followign way: we start computing the quark propagator of the spectator $u$ and $s$, this requires 
+For each ensemble we plan to compute the four-point function of Fig.~\ref{fig:4pt} in the followign way: we start computing the quark propagator of the spectator $u$ and $s$, this requires
 one MG setup for the $u$ and then un update for the strange.
 Then we compute the heavy quark propagators, one direct and two sequential (on the $u$ and $s$ propagators), for each heavy of the six heavy quark masses ($m_h=n m_c$ with $n=1, 1.5, 2, 2.5, 3, 3.5$). For each quark mass we need an update of the MG.
-The two sequential propagator produced so far, with 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$), will be used as a source for a further inversion of the $c$-quark, this requires one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum. 
+The two sequential propagator produced so far, with 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$), will be used as a source for a further inversion of the light $\ell$- and $c$-quark, this requires one MG setup due to the different value of the momenta used and one update to pass from the $\ell$- to the $c$-quark, the setup can be reused within the inversions with the same momentum.
 
 % For each ensemble, we plan to compute  one quark propagator for the strange
 % and five for the heavy quark ($m_h=n m_c$ with $n=1, 1.5, 2, 2.5, 3, 3.5$) all at zero momentum, the strange and the heavy propagator 
@@ -20,19 +20,22 @@ The two sequential propagator produced so far, with 4 insertions of the axial ($
 % insertion and smeared. Then the resulting vectors will be used as a source for a further inversion of the light u-quark and for the c-quark for 10 values of momenta with the 4 insertions of the axial ($\gamma_5\gamma_\mu$ with $\mu=0,1,2,3$) and 4 insertions of the vector current ($\gamma_\mu$). The last set of sequential inversions (u-quark of Fig.~\ref{fig:4pt} and the equivalent substituting the u-quark with a c-quark) require one MG setup due to the different value of the momenta used, but the setup can be reused for all the inversions with the same momentum.
 % In addition, for creating the two-point function in Fig.~\ref{fig:4pt} for the $B$ meson (necessary to construct the ration of Eq.~\ref{eq:ratio_Q}) one
 % inversion for the light quark with zero momentum is necessary, in this case, the MG setup can be then reused for the strange quark inversion.
-All the previous sets of inversion will be repeated 4 times for the spin dilution, 10 times for the different values of the momenta and for a series of different stochastic sources.
+All the previous sets of inversion will be repeated 4 times due to the spin dilution
+and for a series of stochastic sources listed below reusing the same MG setup. 
+however to repeat the inversions for the 10 values of the momenta we plan to use and 
+for different gauge configurations a new MG setup will be constructed.
 The number of stochastic sources is scaled with the volume to keep the error of the different ensembles constant. We measured that the smearing and the contraction time account for 15\% of our running time and we added it to the cost.
 
 In the table below we refer to the following types of runs:
 \begin{enumerate}
 	% \item \label{rt:cAp64} 10 stochastic sources for the cAp211.077.64
-	\item \label{rt:cB48} 10 stochastic sources for 400 gauge configurations for the cB211.072.64
-	\item \label{rt:cB64} 5 stochastic sources for 400 gauge configurations the cB211.072.64
-	\item \label{rt:cB96} 3 stochastic sources for 400 gauge configurations the cB211.072.96
-	\item \label{rt:cC80} 3 stochastic sources for 400 gauge configurations the cC211.06.80
+	\item \label{rt:cB48} 10 stochastic sources for 300 gauge configurations for the cB211.072.64
+	\item \label{rt:cB64} 5 stochastic sources for 300 gauge configurations the cB211.072.64
+	\item \label{rt:cB96} 3 stochastic sources for 300 gauge configurations the cB211.072.96
+	\item \label{rt:cC80} 3 stochastic sources for 300 gauge configurations the cC211.06.80
 	      % \item \label{rt:cC112} 2 stochastic sources for the cC211.06.112	
-	\item \label{rt:cD96}  3 stochastic sources 400 gauge configurations for the cD211.054.96
-	\item  \label{rt:cE112} 2 stochastic sources 400 gauge configurations for the cE211.044.112
+	\item \label{rt:cD96}  3 stochastic sources 300 gauge configurations for the cD211.054.96
+	\item  \label{rt:cE112} 2 stochastic sources 300 gauge configurations for the cE211.044.112
 \end{enumerate}
 We plan to have a job for each configuration and each value of the momentum, then
 all the stochastic sources will be processed in the same job run.
@@ -47,7 +50,7 @@ all the stochastic sources will be processed in the same job run.
 			\# steps/    &
 			Wall time/   &
 			\# cores/    &
-			Total                                                                                                                \\
+			Total                                                                                                               \\
 			project      &
 			of run       &
 			size         &
@@ -55,29 +58,29 @@ all the stochastic sources will be processed in the same job run.
 			run          &
 			step [hours] &
 			run          &
-			[core-h]                                                                                                             \\
+			[core-h]                                                                                                            \\
 			\hline\hline
 			%%%%
 			%%%%
 			%%%%
 			% 1-2          & (\ref{rt:cAp64}) & $64^3\times 128$  & $10\times 400$ & 1 & 1.63 & 8 nodes  & $2.5 \times 10^6$       \\
-			1-2          & (\ref{rt:cB48})  & $64^3\times 128$  & $10\times 400$ & 1 & 1.3 & 2 nodes  & $0.6 \times 10^6$       \\
-			             & (\ref{rt:cB64})  & $64^3\times 128$  & $10\times 400$ & 1 & 1.07 & 4 nodes  & $1.0 \times 10^6$       \\
-			             & (\ref{rt:cB96})  & $96^3\times 192$  & $10\times 400$ & 1 & 0.63 & 24 nodes & $3.0 \times 10^6$       \\
-			             & (\ref{rt:cC80})  & $80^3\times 160$  & $10\times 400$ & 1 & 0.68 & 10 nodes & $1.4 \times 10^6$       \\
-			            %  & (\ref{rt:cC112}) & $112^3\times 224$ & $10\times 400$ & 1 & 0.32 & 56 nodes & $3.4 \times 10^6$       \\
-			             & (\ref{rt:cD96})  & $96^3\times 192$  & $10\times 400$ & 1 & 0.64 & 24 nodes & $3.0 \times 10^6$       \\
-						 & (\ref{rt:cE112})  & $112^3\times 224$  & $10\times 400$ & 1 & 0.45 & 56 nodes & $5.0 \times 10^6$       \\
+			1-2          & (\ref{rt:cB48})  & $64^3\times 128$  & $10\times 300$ & 1 & 2.2  & 2 nodes  & $0.6 \times 10^6$      \\
+			             & (\ref{rt:cB64})  & $64^3\times 128$  & $10\times 300$ & 1 & 1.6 & 4 nodes  & $1.0 \times 10^6$      \\
+			             & (\ref{rt:cB96})  & $96^3\times 192$  & $10\times 300$ & 1 & .97 & 24 nodes & $3.3 \times 10^6$      \\
+			             & (\ref{rt:cC80})  & $80^3\times 160$  & $10\times 300$ & 1 & 1.1 & 10 nodes & $1.6 \times 10^6$      \\
+			%  & (\ref{rt:cC112}) & $112^3\times 224$ & $10\times 400$ & 1 & 0.32 & 56 nodes & $3.4 \times 10^6$       \\
+			             & (\ref{rt:cD96})  & $96^3\times 192$  & $10\times 300$ & 1 & 0.95 & 24 nodes & $3.3 \times 10^6$      \\
+			             & (\ref{rt:cE112}) & $112^3\times 224$ & $10\times 300$ & 1 & 0.68 & 56 nodes & $5.5 \times 10^6$      \\
 			%multyply by 10/9 for smearing and contractions 			
 			%%%
 			%%%
 			%%%
 			\hline\hline
-			TOTAL        &                  &                   &                &   &      &          & $14\times 10^6$ core-h \\
+			TOTAL        &                  &                   &                &   &      &          & $15.3\times 10^6$ core-h \\
 		\end{tabular}
 	}
 \end{center}
 \bigskip
-We thus ask for a total amount of \textbf{14 Mcore-h}, equivalent to \textbf{84168 EFLOP}\footnote{conversion factor 6012 EFLOP / Mcore-h}  on the \textbf{JUWELS-Booster} module at JSC.
+We thus ask for a total amount of \textbf{15.3 Mcore-h}, equivalent to \textbf{91983 EFLOP}\footnote{conversion factor 6012 EFLOP / Mcore-h}  on the \textbf{JUWELS-Booster} module at JSC.
 %%% \textit{(0.5 to 1 page)}
 

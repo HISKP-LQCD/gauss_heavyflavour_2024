@@ -8,7 +8,7 @@ tmp <- data.frame(
   "l" = 0.9,
   "c" = 0.7,
   "scr" = 10,
-  "confs" = 400
+  "confs" = 300
 )
 df <- rbind(df, tmp)
 tmp <- data.frame(
@@ -20,7 +20,7 @@ tmp <- data.frame(
   "l" = 1.3,
   "c" = 1.0,
   "scr" = 5,
-  "confs" = 400
+  "confs" = 300
 )
 df <- rbind(df, tmp)
 tmp <- data.frame(
@@ -32,7 +32,7 @@ tmp <- data.frame(
   "l" = 1.1,
   "c" = 1.1,
   "scr" = 3,
-  "confs" = 400
+  "confs" = 300
 )
 df <- rbind(df, tmp)
 tmp <- data.frame(
@@ -44,7 +44,7 @@ tmp <- data.frame(
   "l" = 1.3,
   "c" = 1.2,
   "scr" = 3,
-  "confs" = 400
+  "confs" = 300
 )
 df <- rbind(df, tmp)
 tmp <- data.frame(
@@ -56,7 +56,7 @@ tmp <- data.frame(
   "l" = 1.0,
   "c" = 1.2,
   "scr" = 3,
-  "confs" = 400
+  "confs" = 300
 )
 df <- rbind(df, tmp)
 tmp <- data.frame(
@@ -68,7 +68,7 @@ tmp <- data.frame(
   "l" = 1.0,
   "c" = 1.3,
   "scr" = 2,
-  "confs" = 400
+  "confs" = 300
 )
 df <- rbind(df, tmp)
 
@@ -77,20 +77,23 @@ Nth<- 10
 spin_dilution<- 4
 ###################################### bu channel
 ##### all Nh in the same run
-### set + -l- + up + -s-
-df$time_1source_1th_1conf <-  df$setup + df$update + ( df$l + df$s) * spin_dilution 
+### set + -l- + update + -s-
+df$time_1source_1th_1conf <-  df$setup + df$update + ( df$scr*df$l + df$scr*df$s) * spin_dilution 
 
 # heavy inversion, 3 because 1 direct and two sequential
-## (update + (-h-   +  -l-h- + -l-s- )*spin_dil )*Nh
-df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + (df$update  + df$c*3*spin_dilution)*Nh
+## (update + (-h-   +  -l-h- + -s-h- )*spin_dil )*Nh
+df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + (df$update  + df$scr*df$c*3*spin_dilution)*Nh
 
 # charm inversion, setup because of th, 8 because of Vmu+ Amu,
-## (setup +  (-l-h-c- + -l-s-c-)*8*spin_dil ) *Nh
-df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$setup + df$c*2*8*spin_dilution*Nh
+## (setup +  (-l-h-l- + -s-h-l-)*8*spin_dil ) *Nh
+df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$setup + df$scr*df$l*2*8*spin_dilution*Nh
+### bc channel 
+## (update +  (-l-h-c- + -s-h-c-)*8*spin_dil ) *Nh
+df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$update + df$scr*df$c*2*8*spin_dilution*Nh
 
 
 ## the bu channel
-## (update(actually will be a setup and an update in the bc channel) +  (-l-h-c- + -l-s-c-)*8*spin_dil ) *Nh
+## (update(actually will be a setup and an update in the bc channel) +  (-l-h-l- + -s-s-l-)*8*spin_dil ) *Nh
 # df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$update + df$l*2*8*Nh*spin_dilution
 
 # for the charm we need an update every time because r change 
@@ -117,7 +120,7 @@ df$time_1source_1th_1conf <-  df$time_1source_1th_1conf + df$setup + df$c*2*8*sp
 ################################## light a zero momentum
 # df$time_1source_1th_1conf <- df$time_1source_1th_1conf +df$setup + df$l *spin_dilution
 
-df$time <- df$time_1source_1th_1conf * df$scr * Nth  * df$confs 
+df$time <- df$time_1source_1th_1conf  * Nth  * df$confs 
 
 df$ch <- df$time * df$nodes * 48 / 3600
 df$Mch <- df$ch / 1e+6
@@ -126,13 +129,14 @@ df$Mch <- df$Mch * 100.0 / 85.0
 print(df$Mch )
 print(sum(df$Mch))
 
-# aa<-round(df$Mch, digit=1)
-# print(aa)
-# print(sum(aa))
-
-## rounding up 
-aa<-ceiling(df$Mch*10)/10 
+aa<-round(df$Mch, digit=1)
 print(aa)
 print(sum(aa))
 
-df$wallt<-df$Mch *1e+6/(10*400*df$nodes*48)
+## rounding up 
+# aa<-ceiling(df$Mch*10)/10 
+# print(aa)
+# print(sum(aa))
+
+df$wallt<-df$Mch *1e+6/(10*300*df$nodes*48)
+print(df$wallt)
