@@ -1,0 +1,150 @@
+\documentclass [a4paper, 11pt]{article}
+
+\usepackage{amssymb}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{float}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{hyperref}
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\textwidth 16 cm
+\textheight 23 cm
+\setlength{\oddsidemargin}{0.1 cm}
+\setlength{\topmargin}{1 cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+\setlength{\footskip}{0.75cm}
+\setlength{\parindent}{0cm}
+\setlength{\oddsidemargin}{0.1 cm}
+\setlength{\itemsep}{10pt}
+\bibliographystyle{gcs}
+\cfoot{\pagemark}
+\ofoot{\tiny V1.9-2022JUL06}
+
+\begin{document}
+
+\LARGE
+\begin{center}
+  \bf Project Report\\
+\end{center}
+
+\large
+\bigskip
+\bigskip
+\bigskip
+
+\textbf{Type of report}\\
+\phantom{MM}\textit{Specify either “Status Report”, “Final Report” or “Annual Report”}
+
+\bigskip
+\textbf{Period}\\
+\phantom{MM}\textit{Give the granting period you report for (month year - month year)}
+
+\bigskip
+\textbf{Project title}\\
+\phantom{MM}\textit{Title as given in the project proposal}
+
+\bigskip
+\textbf{HPC system(s) and corresponding centres(s)}\\
+\phantom{MM} \textit{Please name the HPC system(s)/module(s) used}
+
+\bigskip
+\textbf{Project ID}\\
+\phantom{MM} \textit{Please provide the project ID}
+
+\bigskip
+\textbf{Principal investigator}\\
+\phantom{MM} \textit{Name, affiliation, contact data}
+
+\bigskip
+\textbf{Project contributor(s)}\\
+\phantom{MM} \textit{Name, affiliation, contact data}
+
+\vfill
+\begin{center}
+\textbf{The length of the status report is restricted to 10 pages (font 11 pt)!}\\
+\textbf{The length of the final report is restricted to 18 pages (font 11 pt)!}
+\end{center}
+
+\newpage
+
+\vfill
+\tableofcontents
+\vfill
+
+\newpage
+
+\section{Abstract}\label{sec:abstract}
+\rule{\textwidth}{0.4pt}
+\textit{Give a short introduction to the project and stress the highlights.}\\
+
+\textit{(about 0.5 pages)}
+
+\section{Scientific work accomplished and results obtained}\label{sec:results}
+\rule{\textwidth}{0.4pt}
+\textit{Describe the scientific work which was accomplished within the granting period and the results which were obtained, structured in sub-projects, if applicable. Include a brief description of the simulations performed.}
+
+\subsection{Sub-project A}
+\subsection{Sub-project B}
+\textit{...}
+
+\textit{(about 1 to 2 pages per sub-project)}
+
+\section{Realization of the project}
+\rule{\textwidth}{0.4pt}\\
+\textit{Describe the realization of the project including the following technical aspects, if applicable:
+\begin{itemize}
+  \item Describe the simulations performed (codes actually used, number of cores used, ...)
+  \item Describe code modifications/improvements that have been done/achieved
+  \item If the granted computing time has not been used completely, please discuss the reasons briefly
+  \item If the used compute time is at least twice as much as the required time in the application then the Principle Investigator is obliged to provide a report which clarifies the increased computing time requirement
+\end{itemize}
+}
+
+\section{Publications with the appropriate acknowledgement}
+\rule{\textwidth}{0.4pt}
+\textit{For status reports, please list in this section only publications published in the last granting period. For other publications, please use section \ref{sec:addref}.}\\
+
+\textit{List publications published in peer-reviewed journals or peer-reviewed conference proceedings, which contain results obtained in this project. The computing resources must be properly acknowledged in the publications. In dependence on the type of application, please choose one of the following:
+	\begin{sloppypar}
+	\begin{itemize}
+		\item GCS Large Scale Projects at JSC on JUWELS:
+		\begin{quote}
+			The authors gratefully acknowledge the Gauss Centre for Supercomputing e.V. (www.gauss-centre.eu) for funding this project by providing computing time on the GCS Supercomputer JUWELS at J\"ulich Supercomputing Centre (JSC).\newline
+		\end{quote}	
+		\item GCS Regular Projects at JSC on JUWELS:
+		\begin{quote}
+			The authors gratefully acknowledge the Gauss Centre for Supercomputing e.V. (www.gauss-centre.eu) for funding this project by providing computing time through the John von Neumann Institute for Computing (NIC) on the GCS Supercomputer JUWELS at J\"ulich Supercomputing Centre (JSC).\newline
+		\end{quote}	
+		\item GCS Large Scale and Regular Projects at LRZ on SuperMUC-NG:
+		\begin{quote}
+			The authors gratefully acknowledge the Gauss Centre for Supercomputing e.V. (www.gauss-centre.eu) for funding this project by providing computing time on the GCS Supercomputer SUPERMUC-NG at Leibniz Supercomputing Centre (www.lrz.de).\newline
+		\end{quote}
+		\item GCS Large Scale and Regular Projects at HLRS on Hawk:
+		\begin{quote}
+			The authors gratefully acknowledge the Gauss Centre for Supercomputing e.V. (www.gauss-centre.eu) for funding this project by providing computing time on the GCS Supercomputer HAWK at H\"ochstleistungsrechenzentrum Stuttgart (www.hlrs.de).\newline
+		\end{quote}
+	\end{itemize}
+	\end{sloppypar}
+}
+\section{Theses completed within the project}
+\rule{\textwidth}{0.4pt}
+\textit{Please, give author's name, degree, and the title of the thesis.}
+
+\section{Additional references}\label{sec:addref}
+\rule{\textwidth}{0.4pt}
+\textit{Space for additional references, e.g. cited in section \ref{sec:results}, if applicable.}
+
+\section{Material suitable for the general public}
+\rule{\textwidth}{0.4pt}
+\textit{In order to promote simulation sciences, we are interested in attractive color pictures which were created in your project, and which can be interesting for a general public.} \\
+
+\textit{Please provide also descriptions understandable to a scientifically interested general audience.}\\
+
+\textit{By providing this material you grant us permission to use text and pictures in publications about GCS and its member centres, NIC as well as JARA and its member centres.}
+
+\end{document}
