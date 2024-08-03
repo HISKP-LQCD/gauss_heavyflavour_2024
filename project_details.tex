@@ -1,11 +1,4 @@
 \label{sec:proj}
-The core of our project is the calculation of inclusive semileptonic decays of the $B$ and $B_s$ mesons, to do so we need to first determine the physical $b$-quark point.
-The raw data produced by the HPC facilities
-contributes to the determination of
-the $B$ and $B_s$ meson mass and to
-the total inclusive decay rate for the process $B_{(s)} \to X\ell\bar\nu$.
-The simulations
-will be done at six values of an heavy quark mass in a rage from 1 to 3.5 times the charm quark mass. The determination and subsequent extrapolation to $m_b$ will be done in the analysis.
 
 The computation proposed here will use the same ensembles of the previous stage of the project
 i.e. Wilson-clover twisted
@@ -21,12 +14,18 @@ mesons, respectively, as described in Appendix C of
 Ref.\cite{ExtendedTwistedMass:2022jpw}. For more details, we refer to
 this reference.
 
-% Before discussing the two sub-projects we would like to point out that a
-% successful implementation of the proposed project will produce not
-% only phenomenologically interesting results, but it will also be the
-% basis for a future extension towards B mesons using the ideas we have
-% put forward in Ref.~\cite{ETM:2009sed}.
 
+The core of our project is the calculation of inclusive semileptonic
+decays of the $B$ and $B_s$ mesons, for which we need to determine the
+bare $b$-quark mass first.
+For the application of what we call the
+ratio-method~\cite{ETM:2009sed}, we will generate data at six
+different values of the heavy quark mass in the range from 
+1 to 3.5 times the charm quark mass. 
+The data produced for these six heavy quark mass values can be used at
+the same time for the  determination of the $B$ and $B_s$ meson masses
+and the total inclusive decay rate for the process $B_{(s)} \to
+X\ell\bar\nu$. 
 
 
 
@@ -36,7 +35,7 @@ this reference.
 
 By using the optical theorem, the semileptonic decay of a $B$ and $B_s$
 % mesons to charmed final states $X_c$ 
-to an hadron $X$ with a pair of massless leptons $B_{(s)} \to X\ell\bar\nu$ can be written as
+to a hadron $X$ with a pair of massless leptons $B_{(s)} \to X\ell\bar\nu$ can be written as
 \begin{equation}
   \Gamma = G^2_F\left\{ |V_{bu} |^2 \Gamma_{bu} + |V_{bc} |^2 \Gamma_{bc} + |V_{su} |^2 \Gamma_{su}
   \right\}\,,
@@ -253,68 +252,80 @@ and then extrapolated to the physical $b$ mass.
 \subsection{Sub-project 2: Bottom quark mass $m_b$}
 \label{sec:mb}
 
-We can extract the mass of the $B$ and $B_s$ pseudo-scalar meson ($M_{B}$ and $M_{B_s}$) meson,
-from the right diagram of Figure~\ref{fig:4pt} representing the two point function
+In this sub-project we describe the determination of the $b$-quark
+mass. We can extract the mass of the $B$ and $B_s$ pseudo-scalar mesons ($M_{B}$ and $M_{B_s}$)
+from the right diagram of Figure~\ref{fig:4pt} representing the two-point function
 \begin{equation}
   \langle B_{(s)}(\bm{0},t) B_{(s)}^\dagger({\bf 0},0)\rangle\xrightarrow{t>>a, (T-t)>>a}
   \frac{1}{2M_{B_{(s)}}}|\langle 0 | B_{(s)} | B_{(s)}\rangle|^2\left(e^{-M_{B_{(s)}} t}+e^{-M_{B_{(s)}}(T-t)}\right)
-  \, \label{eq:Mb}
+  \,
+  \label{eq:Mb}
 \end{equation}
-with the operator $B({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 u({\bf x},t)$
-and $B_s({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 s({\bf x},t)$.
-Due to present day computer limitations, it is not possible, however, to work directly
-with the b-quarks propagating on the simulated lattice, the ratio method approach the
-b-quark mass by interpolating from the charm region to the asymptotic infinite mass.
+with the operators $B({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 u({\bf x},t)$
+and $B_s({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 s({\bf
+  x},t)$.
+In quantities involving the (valence) $b$-quark, we expect lattice
+artifacts of the order $(am_b)^2$, which can be significant even with
+the lattice spacing values employed in this project. Therefore, it is
+advisable not to work directly at the $b$-quark mass, but to apply the
+ratio method: The $b$-quark mass is obtained as an interpolation
+between quark masses in the charm region and the static limit.
 Thus, we compute Eq.~(\ref{eq:Mb}) replacing the $b$ quark with six heavy quarks $h$
 in the range of $m_h\in [m_c,3.5m_c]$
-and for each we compute the quantity
+and for each we compute the ratio
 \begin{equation}
-  Q_m = \frac{M_{hs}}{M_{h\ell}^\gamma M_{cs}^{(1-\gamma)}}
+  Q_m = \frac{M_{hs}}{M_{h\ell}^\gamma M_{cs}^{(1-\gamma)}}\,,
   \label{eq:ratio_Q}
 \end{equation}
 where $M_{hs}$ and $M_{hl}$ are the heavy-strange and heavy-light
 pseudoscalar masses, respectively, while we denote by $M_{cs}$
 the mass of the pseudoscalar meson made out of a charm
-and a strange quark. The parameter $\gamma$ is a free parameter in the range  $[0, 1)$.
-The asymptotic behavior can be computed using HQET
+and a strange quark. The parameter $\gamma$ is a free parameter in the range $[0, 1)$.
+The asymptotic behavior of $Q_m$ can be computed using HQET reading
 \begin{equation}
   \lim_{ m^{pole}_h\to \infty}
-  \frac{M_{hs}}{( m^{pole}_h)^{(1-\gamma)} M_{h\ell}^\gamma}=\mbox{const.}
+  \frac{M_{hs}}{( m^{pole}_h)^{(1-\gamma)} M_{h\ell}^\gamma}=\mbox{const.}\,,
   \label{eq:yHQFTlim}
 \end{equation}
 where $ m^{pole}_h$ is the pole mass of the heavy quark.
 We then consider a sequence of heavy quark masses such that any two
 successive masses have a common and fixed ratio i.e.
-$ m_h^{(n)}=\lambda m_h^{(n-1)}, n=2,3,...$ and we construct the ratios
-at given lattice spacing $a$
+$ m_h^{(n)}=\lambda m_h^{(n-1)}, n=2,3,...$ and we construct the
+follosing ratios at given lattice spacing $a$
 \begin{equation}
-  y_Q( m^{(n)}_h,a)=\frac{Q_m( m_h^{(n)},a)}{Q_m( m_h^{(n-1)},a)}\cdot
-  \left(\frac{ m_{h}^{(n)} \rho( m_{h}^{(n)})}{ m_{h}^{(n-1)}\rho( m_{h}^{(n-1)})}\right)^{(\gamma-1)}
-  =\lambda^{(\gamma-1)}\frac{Q_m( m_h^{(n)},a)}{Q_m( m_h^{(n-1)},a)}\cdot
-  \left(\frac{ \rho( m_{h}^{(n)})}{\rho( m_{h}^{(n-1)})}\right)^{(\gamma-1)}\,,
+  \begin{split}
+    y_Q( m^{(n)}_h,a)&=\frac{Q_m( m_h^{(n)},a)}{Q_m( m_h^{(n-1)},a)}\cdot
+    \left(\frac{ m_{h}^{(n)} \rho( m_{h}^{(n)})}{ m_{h}^{(n-1)}\rho( m_{h}^{(n-1)})}\right)^{(\gamma-1)}\\
+    &=\lambda^{(\gamma-1)}\frac{Q_m( m_h^{(n)},a)}{Q_m( m_h^{(n-1)},a)}\cdot
+    \left(\frac{ \rho( m_{h}^{(n)})}{\rho(
+      m_{h}^{(n-1)})}\right)^{(\gamma-1)}\\\,,
+  \end{split}
 \end{equation}
 where we have used the relation  $ m^{pole}_h= m_{h}^{} \rho( m_{h}^{})$
-between the $\overline{\mbox{MS}}$ renormalised mass and the pole mass.
-The factor $\rho$ are known perturbatively up to N$^3$LO \cite{Chetyrkin:1999pq}.
-For each pair of heavy quark we carry out a continuum extrapolation
-\footnote{We do not need a chiral extrapolation since we are already at physical point}
+between the $\overline{\mbox{MS}}$ renormalised mass and the pole
+mass, which is known perturbatively up to N$^3$LO~\cite{Chetyrkin:1999pq}.
+For each pair of heavy quark masses, we carry out a continuum
+extrapolation seperately
+\footnote{We do not need a chiral extrapolation since we are already at physical point.}
 obtaining $y_Q( m^{(n)}_h)=y_Q( m^{(n)}_h,a=0)$.
-In the continuum the ration $y_Q( m^{(n)}_h)$ can be described in therm
-of heavy mass $ m_h$ as in \cite{ETM:2011zey}
+In the continuum limit, the ratios $y_Q( m^{(n)}_h)$ can be described
+in terms of the heavy mass $m_h$ as~\cite{ETM:2011zey}
 \begin{equation}
   y_Q( m^{(n)}_h) = 1 + \frac{\eta_1}{ m_h}+ \frac{\eta_2}{ m_h^2}\,,
   \label{eq:fity}
 \end{equation}
-where the limit in Eq.~(\ref{eq:yHQFTlim}) is already incorporated.
+where $\eta_{1,2}$ are free parameters and the limit in
+Eq.~(\ref{eq:yHQFTlim}) has already been taken into account.
 Finally, the $b$-quark mass can be computed with
 \begin{equation}
   y_Q( m^{(2)}_h)y_Q( m^{(3)}_h)...y_Q( m^{(K+1)}_h)\frac{Q_m( m_h^{(1)},a)}{\lambda^{K(\gamma-1)}}
   \left(\frac{ \rho( m_{h}^{(K+1)})}{\rho( m_{h}^{(1)})}\right)^{(1-\gamma)}=Q_m( m_h^{(K+1)},a)
   \,,
 \end{equation}
-where  ratios $y_Q$  in the lhs are evaluated using the fit function Eq.~(\ref{eq:fity})
-and the parameters $\lambda$, $K$ and $ m_h^1$ are such that $Q_m( m_h^{(K+1)},a)$ matches
-the experimental value of $M_{B_s}/(M_{B}^\gamma M_{D_s}^{(1-\gamma)})$.
+where the ratios $y_Q$ on the left-hand-side are evaluated using the
+fit function Eq.~(\ref{eq:fity}) and the parameters $\lambda$, $K$ and
+$ m_h^1$ chosen such that $Q_m( m_h^{(K+1)},a)$ matches 
+the experimental value of the ratio $M_{B_s}/(M_{B}^\gamma M_{D_s}^{(1-\gamma)})$.
 
 
 \endinput

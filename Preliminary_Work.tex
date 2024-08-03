@@ -8,82 +8,70 @@ different lattice spacing values at the physical point, by which we
 mean physical values of all the dynamical quark masses. For the
 proposal here we propose to use four values of the lattice spacing,
 corresponding to the ensembles compiled in Table~\ref{tab:ensembles}. The
-ensembles labelled with $B$, $C$, $D$, $E$ have been produced already
-and used in several ETMC
+ensembles labelled with $B$, $C$, $D$, $E$ have been produced
+already. They are being used in several ETMC
 works~\cite{ExtendedTwistedMass:2021qui,ExtendedTwistedMass:2021gbo,ExtendedTwistedMass:2022jpw,ExtendedTwistedMassCollaborationETMC:2022sta}
-an in the previous stage of this project.
+as well as in the previous period of this computer time project.
 These four lattice spacing values will enable a controlled continuum
 limit of the quantities relevant to this proposal.
 Moreover, at the $B$ value of the lattice spacing we have
 three volumes available, which will allow us to check finite volume
-effects representing a main source of systematic uncertainty.
+effects, which represent a main source of systematic uncertainty.
 Since we work directly at physical light quark mass values, no
 extrapolation in the light quark mass values is necessary.
 
-For the continuum limit we additionally benefit from automatic
+For the continuum limit, we additionally benefit from automatic
 $\mathcal{O}(a)$-improvement of the physical observables in question
 thanks to the twisted mass action at
 maximal twist, ensuring convergence to the continuum
 limit with scaling violations of order $a^2$~\cite{Frezzotti:2003ni}.
 
-\begin{SCtable}[.4]
-	\centering % center the table
-	\begin{tabular}{lccccr} % alignment of each column data
-		\toprule
-		name          & $L$ [fm]      & $a$
-		[fm]          & $M_\pi$ [MeV] & $M_\pi L$                         \\
-		\midrule
-		% cAp211.077.64 & 5.76 & $\sim$0.09 & $\approx$ 135 & 3.95  \\
-		\midrule
-		cB211.072.48  & 3.84          & $\sim$0.08 & $\approx$ 135 & 2.63 \\
-		cB211.072.64  & 5.12          & $\sim$0.08 & $\approx$ 135 & 3.51 \\
-		cB211.072.96  & 7.68          & $\sim$0.08 & $\approx$ 135 & 5.27 \\
-		\hline
-		cC211.06.80   & 5.44          & $\sim$0.07 & $\approx$ 135 & 3.72 \\
-		% cC211.06.112  & 7.62          & $\sim$0.07 & $\approx$ 135 & 5.21 \\
-		\hline
-		cD211.054.96  & 5.76          & $\sim$0.06 & $\approx$ 135 & 3.94 \\
-		\hline
-		cE211.044.112 & 5.48          & $\sim$0.05 & $\approx$ 135 & 3.75 \\
-		\bottomrule
-	\end{tabular}
-	\caption{ETMC's $N_f=2+1+1$ gauge ensembles relevant for this
-		proposal. The time extent is always set to $T=2L$.}
-	\label{tab:ensembles}
+\begin{SCtable}[.4]           
+  \centering % center the table
+  \begin{tabular}{lccccr} % alignment of each column data
+    \toprule
+    name          & $L$ [fm]      & $a$
+    [fm]          & $M_\pi$ [MeV] & $M_\pi L$                         \\
+    \midrule
+    % cAp211.077.64 & 5.76 & $\sim$0.09 & $\approx$ 135 & 3.95  \\
+    \midrule
+    cB211.072.48  & 3.84          & $\sim$0.08 & $\approx$ 135 & 2.63 \\
+    cB211.072.64  & 5.12          & $\sim$0.08 & $\approx$ 135 & 3.51 \\
+    cB211.072.96  & 7.68          & $\sim$0.08 & $\approx$ 135 & 5.27 \\
+    \hline
+    cC211.06.80   & 5.44          & $\sim$0.07 & $\approx$ 135 & 3.72 \\
+    % cC211.06.112  & 7.62          & $\sim$0.07 & $\approx$ 135 & 5.21 \\
+    \hline
+    cD211.054.96  & 5.76          & $\sim$0.06 & $\approx$ 135 & 3.94 \\
+    \hline
+    cE211.044.112 & 5.48          & $\sim$0.05 & $\approx$ 135 & 3.75 \\
+    \bottomrule
+  \end{tabular}
+  \caption{ETMC's $N_f=2+1+1$ gauge ensembles relevant for this
+    proposal. The time extent is always set to $T=2L$.}
+  \label{tab:ensembles}
 \end{SCtable}
 
-% In addition to the feasibility study presented by the authors of
-% Ref.~\cite{Gambino:2022dvu} including some of the project contributors of this
-% project, we have performed a first exploratory investigation of
-% charm-down quark part of the
-% differential decay rate of the $D_s$ meson decaying into $X\ell\bar\nu$ on
-% the cB211.072.64 ensemble, for the first time at the physical
-% point. The result is shown in Figure~\ref{fig:Gamma_B64}.
-
-The computation of the bottom quark mass was already performed with
+The computation of the bottom quark mass has already been performed with
 the previous generation of gauge ensembles of ETMC~\cite{ETM:2016nbo,ETM:2011zey} with
-non physical pion masses, smaller volumes and coarser lattice spacing.
-With the most recent ensembles of ETMC some $B$ physics has been studied, by some authors
-that are present in this application, in \cite{Frezzotti:2024kqk}.
-% but an hadronic scheme was used to determine the physical $B$ meson point, here we propose to 
-% determine the renormalised bottom quark mass.   
+non physical pion masses, smaller volumes and coarser lattice
+spacings.
+The experience obtained then will be very useful in the proposed
+project.
+Moreover, that $B$ physics is possible on the ensemble compiled in
+Table~\ref{tab:ensembles} was shown for instance in Ref.~\cite{Frezzotti:2024kqk}.
 
-
-The computation of the inclusive decay rate $D_s\to X \ell \nu$
-is getting finilized and a preliminary result is reported in Figure~\ref{fig:dGammadq_Ds},
-From  Figure~\ref{fig:dGammadq_Ds} we show that the statistical and systematic
-uncertainty can be controlled  the
-dependence on the squared momentum can be resolved. This makes us
-confident that we can extend the calculation to heavier quark mass
-using an extrapolation guided by heavy quark effective theory.
-The computation of the decay rate at heavier masses will be interesting by itself even at lighter 
-physical $B$ meson, because it can constrain the 
-operator product expansion (OPE)  describing the inclusive semileptionic $B$ decay 
-\cite{Manohar:1993qn, Blok:1993va, Gambino:2004qm} following the technique of \cite{Gambino:2022dvu}.
-
-% To extend the calculation to the $B$ and $B_s$ meson we will simulate at six values of the 
-% heavy quark in the range $1-3$ the charm quark mass and  extrapolate to the $b$ quark mass
-%  to.
+With the calculation of the $D_s\to X \ell \nu$ inclusive decay rate
+in the current accounting period, which we are currently finalising,
+we are certain that statistical and systematic uncertainties can be
+controlled, while the $q^2$ dependence can be resolved at the same
+time, also for $B$ and $B_s$ mesons.
+Moreover, the computation of the decay rates at heavy quark masses in
+the region between the charm and the bottom are interesting in itself:
+it can be used to constrain the operator product expansion (OPE)
+describing the inclusive semileptionic $B$
+decay~\cite{Manohar:1993qn,Blok:1993va,Gambino:2004qm} following the 
+technique of Ref.~\cite{Gambino:2022dvu}. 
 
 
 \endinput
