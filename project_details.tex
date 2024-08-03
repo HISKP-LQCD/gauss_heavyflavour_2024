@@ -3,8 +3,8 @@
 The computation proposed here will use the same ensembles of the previous stage of the project
 i.e. Wilson-clover twisted
 mass fermions~\cite{Alexandrou:2018egz}. The up/down quarks will be treated
-in a fully unitary setting. To avoid flavor mixing lattice artifacts
-in the unitary strange/charm sector of this regularization, we use a
+in a fully unitary setting. To avoid flavor mixing lattice artefacts
+in the unitary strange/charm sector of this regularisation, we use a
 mixed action approach for strange and charm quarks: so-called
 Osterwalder-Seiler type~\cite{Frezzotti:2004wz} strange and charm quark doublets
 $(s^+ , s^-)^T$ and $(c^+ , c^- )^T$ are added with bare
@@ -15,7 +15,7 @@ Ref.\cite{ExtendedTwistedMass:2022jpw}. For more details, we refer to
 this reference.
 
 
-The core of our project is the calculation of inclusive semileptonic
+The core of our project is the calculation of inclusive semi-leptonic
 decays of the $B$ and $B_s$ mesons, for which we need to determine the
 bare $b$-quark mass first.
 For the application of what we call the
@@ -33,19 +33,16 @@ X\ell\bar\nu$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Sub-project 1: total inclusive decay rate $B_s \to X\ell\bar\nu$}
 
-By using the optical theorem, the semileptonic decay of a $B$ and $B_s$
-% mesons to charmed final states $X_c$ 
+By using the optical theorem, the semi-leptonic decay of a $B$ and $B_s$
 to a hadron $X$ with a pair of massless leptons $B_{(s)} \to X\ell\bar\nu$ can be written as
 \begin{equation}
   \Gamma = G^2_F\left\{ |V_{bu} |^2 \Gamma_{bu} + |V_{bc} |^2 \Gamma_{bc} + |V_{su} |^2 \Gamma_{su}
   \right\}\,,
   % \Gamma_c = G^2_F |V_{bc} |^2 \Gamma_{bc}\,.
 \end{equation}
-where the different contributions to the right side correspond at the quark level
-to the weak transitions $b \to u$, $b \to c$ and $s \to u$ respectively.
+where the different contributions on the right-hand-side correspond at the quark level
+to the weak transitions $b \to u$, $b \to c$ and $s \to u$, respectively.
 Each contribution can be written as
-% This decay may occur with the quark-level decay process $b \to c\ell \bar\nu$, it's important to notice that in the case of the $B$ and $B_s$ meson this channel is known experimentally while 
-% in the case of the $D_s$ meson only the sum over all weak transition is known. The decay rate divided by the square of the  Fermi constant $G_F$ and the CKM angle $V_{bc}$ can be written as
 \begin{equation}\label{eq:Gamma_fg}
   \Gamma_{fg}=\int \frac{d^3p_\nu}{(2\pi)^32E_\nu}\frac{d^3p_\ell}{(2\pi)^32E_\ell}
   L_{\mu\nu}(p_\ell, p_\nu) H^{\mu\nu}_{fg}(p,p-p_\ell-p_\nu)\,,
@@ -62,26 +59,23 @@ while the hadronic tensor reads
   \delta^4(\mathbb{P}-p_x) J^{\nu\dagger}_{gf} (0)| B_{(s)}\rangle\,.
 \end{equation}
 $\mathbb{P}$ is the QCD four momentum operator and $J_{fg}$ are the
-relevant Minkowski weak currents $J_{fd}^\mu(x)=i\bar
+relevant Minkowski weak currents $J_{fg}^\mu(x)=i\bar
   f(x)\gamma^\mu(1-\gamma_5)g(x)$.
-The contribution $\Gamma_{su}$ is zero in the decay of the $B$ for momentum conservation while  in the decay of the $B_{s}$
-is suppressed by the integration over
-the phase space of \eqref{eq:Gamma_fg}, moreover, this  channel is only inclusive through $B_s-> B\ell\bar\nu$.
-% The $bu$ channel for the $B$ meson involves disconnected contribution
-The calculation of $\Gamma_{bu}$  requires computing disconnected diagrams which is computationally more challenging than the connected part.
-On the other hand the contribution coming from disconnected diagrams is expected to be small due to OZI-suppression rule.
-In this project we will focus only on the computation of $\Gamma_{bc}$ and the connected part of $\Gamma_{bu}$
-leaving the computation of the disconnected diagram in a separate project.
+The contribution $\Gamma_{su}$ is zero in the decay of the $B$ for
+momentum conservation while  in the decay of the $B_{s}$ it is
+suppressed by the integration over the phase space of
+\eqref{eq:Gamma_fg}. Moreover, this flavour channel is only inclusive
+through $B_s\to B\ell\bar\nu$. 
+The calculation of $\Gamma_{bu}$  requires computing disconnected
+diagrams, which is computationally more challenging than the connected
+part. 
+On the other hand the contribution coming from disconnected diagrams
+is expected to be small due to the OZI-suppression rule. 
+In this project we will focus only on the computation of $\Gamma_{bc}$
+and the connected part of $\Gamma_{bu}$ leaving the computation of the
+disconnected diagram to a followup project. 
 It is important to notice that the decays $B_{(s)} \to X_c\ell\bar\nu$ corresponding to decays into charmed final states $X_c$ are known from the experimental side and thus can be compared directly with our calculations.
 
-% In this channel there are not disconnected diagrams.
-% On the contrary of the decay of the $D_s$ meson here there are not disconnected
-% diagrams.
-% The contribution $\Gamma_{su}$ is suppressed by the integration over
-% the phase space of \eqref{eq:Gamma_fg} thus it is expected to not contribute to the total
-% decay rate. Moreover, the decay in the $su$ channel is only inclusive through $B_s-> B\ell\bar\nu$.
-% In this project we will focus only on the $bu$ and $bc$ channels while we will verify
-% that the $su$ contribution is small in separate budget available on other machines.
 From now on we will drop the indices $fg$
 and the procedure we are describing will be equivalent for the $bu$ and $bc$ contributions,
 moreover
@@ -136,8 +130,6 @@ kernel. However, the $\theta$-function is not smooth, which is why we
 will use a $C_\infty$ kernel that
 after taking the infinite volume limit, the
 $\theta$-function is recovered as $\sigma\to0$, i.e. $\lim_{\sigma\to 0} K_\sigma^l(x^*,x)=\Theta^l(x^*-x)$.
-%such that the step-function is recovered in the limit $\sigma\to0$, i.e.
-%$\lim_{\sigma\to 0} \theta_\sigma(x)=\theta(x)$.
 Therefore,
 \begin{gather}
   \frac{48 \pi^4}{m_{B_{(s)}}^5}\frac{d\Gamma}{d \bm{ \omega^2} }
@@ -145,13 +137,10 @@ Therefore,
 \end{gather}
 The spectral reconstruction can be performed at the analysis stage. Thus,
 the main cost of this calculation is the production of the
-four-point function \eqref{eq:4pt}.
-% In the case of the $b\to u$ weak
-% transition the corresponding required Wick contractions are shown in
-% Fig.~\ref{fig:4pt}.
+four-point functions \eqref{eq:4pt}.
 
 The renormalization constants necessary to renormalise the ratio of
-correlators \eqref{eq:ratio_4pt_2pt} $Z_A$ and $Z_V$ are already
+correlators \eqref{eq:ratio_4pt_2pt} $Z_A$ and $Z_V$ have already been
 computed in previous work of ETMC~\cite{ExtendedTwistedMass:2024myu}.
 
 \begin{figure}
@@ -190,7 +179,12 @@ computed in previous work of ETMC~\cite{ExtendedTwistedMass:2024myu}.
       };
     \end{feynman}
   \end{tikzpicture}
-  \caption{On the left: Wick contractions required for the calculation of the correlator \eqref{eq:4pt} for the contribution $cd$. For the contribution $cs$ the $d$-quark propagator must be replaced with and $s$-quark propagator. On the right: Wick contractions required for the calculation of the correlator \eqref{eq:2pt} .}
+  \caption{On the left: Wick contractions required for the calculation
+    of the correlator \eqref{eq:4pt} for the contribution $cd$. For
+    the contribution $cs$ the $d$-quark propagator must be replaced
+    with and $s$-quark propagator. On the right: Wick contractions
+    required for the calculation of the mesonic two-pointcorrelator
+    \eqref{eq:2pt}.}
   \label{fig:4pt}
 \end{figure}
 
@@ -202,26 +196,6 @@ physical $b$-quark, but the decay rate will be computed
 using a set of heavy quark mass as described in the sub-project 2 of section~\ref{sec:mb}
 and then extrapolated to the physical $b$ mass.
 
-% As mentioned already, we have performed a first exploratory
-% investigation of the differential decay rate on ensemble cB211.072.64
-% in order to understand the feasibility of the proposed calculation. We
-% used 300 gauge configurations with three stochastic sources each
-% (see below for how stochastic sources are used here)
-% and we compute only the $cd$ contribution. The
-% resulting differential decay rate is shown in Fig.~\ref{fig:dGammadq_Ds}
-% for four values of the square momentum of the final hadronic state. Apart from the statistical
-% accuracy, which appears satisfactory, we also wanted to understand how
-% to choose the time-separations appropriately. For one of the values of
-% the momenta we have performed the calculation for different choices
-% for the times $t_{snk}$, $t_2$ and the minimal value of $t_1$ included
-% in the spectral reconstruction. However, within errors, all three
-% choices give compatible results.
-
-% For the calculation proposed here we plan to stick to the most
-% conservative choice, namely $t_{snk}=56$, $t_2=40$ and $t_1=16$,
-% corresponding to the blue circles in Fig.~\ref{fig:dGammadq_Ds}.
-% For the ensembles at the other lattice spacings and volumes we plan to keep the
-% time separations constants in physical units.
 
 
 \begin{figure}
@@ -230,23 +204,9 @@ and then extrapolated to the physical $b$ mass.
   \caption{Preliminary values of the differential decay rate of
   $D_s\to X\ell\bar\nu$.
   the contribution form the $cd$ channel (in red) is observed to be smaller than
-  the contribution form the $cd$ channel and (in blue) mainly due to $V_{cs}>V_{cd}$ }
+  the contribution form the $cd$ channel and (in blue) mainly due to $V_{cs}>V_{cd}$.}
   \label{fig:dGammadq_Ds}
 \end{figure}
-
-% \subsection{Sub-project 2: decay constant $f_D$ and $f_{D_s}$}
-
-% From the two-point function \eqref{eq:2pt} we can extract the decay
-% constant of the corresponding pseudo-scalar (PS) meson as 
-% \begin{equation}
-%   f_\mathrm{PS}=(\mu_f+\mu_{f'})\frac{\langle 0| P_{ff'}|
-%     \mathrm{PS}\rangle}{M_\mathrm{PS}^{ff'}\sinh(M_\mathrm{PS}^{ff'})}\, 
-% \end{equation}
-% where the matrix element is extracted from the correlation function
-% \eqref{eq:2pt} at large time separations. The PS-meson is made out of
-% valence quark flavours with bare masses $\mu_f$ and $\mu_{f'}$ , and
-% its mass is denoted by $M_\mathrm{PS}^{ff'}$. We plan to compute the
-% decay constant for the $D_s$ and $D$ meson, thus $f=c$ and $f'=s,d$. 
 
 
 \subsection{Sub-project 2: Bottom quark mass $m_b$}
@@ -261,11 +221,13 @@ from the right diagram of Figure~\ref{fig:4pt} representing the two-point functi
   \,
   \label{eq:Mb}
 \end{equation}
-with the operators $B({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 u({\bf x},t)$
-and $B_s({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 s({\bf
-  x},t)$.
-In quantities involving the (valence) $b$-quark, we expect lattice
-artifacts of the order $(am_b)^2$, which can be significant even with
+with the operators
+\[
+B({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 u({\bf x},t)\,,\qquad
+B_s({\bf 0},t)=\frac{1}{L^3}\sum_{\bf x}\bar b\gamma_5 s({\bf x},t)\,.
+\]
+In quantities involving a (valence) $b$-quark, we expect lattice
+artefacts of the order $(am_b)^2$, which can be significant even with
 the lattice spacing values employed in this project. Therefore, it is
 advisable not to work directly at the $b$-quark mass, but to apply the
 ratio method: The $b$-quark mass is obtained as an interpolation
@@ -278,10 +240,10 @@ and for each we compute the ratio
   \label{eq:ratio_Q}
 \end{equation}
 where $M_{hs}$ and $M_{hl}$ are the heavy-strange and heavy-light
-pseudoscalar masses, respectively, while we denote by $M_{cs}$
-the mass of the pseudoscalar meson made out of a charm
+pseudo-scalar masses, respectively, while we denote by $M_{cs}$
+the mass of the pseudo-scalar meson made out of a charm
 and a strange quark. The parameter $\gamma$ is a free parameter in the range $[0, 1)$.
-The asymptotic behavior of $Q_m$ can be computed using HQET reading
+The asymptotic behaviour of $Q_m$ can be computed using HQET reading
 \begin{equation}
   \lim_{ m^{pole}_h\to \infty}
   \frac{M_{hs}}{( m^{pole}_h)^{(1-\gamma)} M_{h\ell}^\gamma}=\mbox{const.}\,,
@@ -291,7 +253,7 @@ where $ m^{pole}_h$ is the pole mass of the heavy quark.
 We then consider a sequence of heavy quark masses such that any two
 successive masses have a common and fixed ratio i.e.
 $ m_h^{(n)}=\lambda m_h^{(n-1)}, n=2,3,...$ and we construct the
-follosing ratios at given lattice spacing $a$
+following ratios at given lattice spacing $a$
 \begin{equation}
   \begin{split}
     y_Q( m^{(n)}_h,a)&=\frac{Q_m( m_h^{(n)},a)}{Q_m( m_h^{(n-1)},a)}\cdot
@@ -305,7 +267,7 @@ where we have used the relation  $ m^{pole}_h= m_{h}^{} \rho( m_{h}^{})$
 between the $\overline{\mbox{MS}}$ renormalised mass and the pole
 mass, which is known perturbatively up to N$^3$LO~\cite{Chetyrkin:1999pq}.
 For each pair of heavy quark masses, we carry out a continuum
-extrapolation seperately
+extrapolation separately
 \footnote{We do not need a chiral extrapolation since we are already at physical point.}
 obtaining $y_Q( m^{(n)}_h)=y_Q( m^{(n)}_h,a=0)$.
 In the continuum limit, the ratios $y_Q( m^{(n)}_h)$ can be described
