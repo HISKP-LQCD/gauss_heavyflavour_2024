@@ -123,7 +123,7 @@ A first principles computation of this decay rate is of high
 phenomenological relevance, since a comparison with experimental data
 allows for stringent Standard Model tests in the sector of Flavour physics.
 Additionally, our work sets the stage to a future
-project involving the $B$ meson(s), which will allows us to
+project involving the $B$ meson(s), which will allow us to
 investigate current flavour anomalies.
 
 
@@ -158,7 +158,7 @@ replace also ensemble cC211.06.112 with cE211.044.112. Both
 ensembles come with similar computational costs, but the cE211.044.112
 is at a finer lattice spacing allowing us to perform a better
 controlled continuum limit, while finite volume effects are controlled
-by the three cB ensembles.
+by the three cB ensembles, see above.
 
 Despite ongoing simulation efforts, our preliminary results
 look very promising and a paper is in preparation.  
@@ -199,24 +199,24 @@ September 28 to August 3 of this year in Liverpool, UK~\cite{talklatt2024_ale,ta
 The total inclusive decay rate for the
 process $D_s \to X\ell\nu$ can be written as
 \begin{equation}
-	\Gamma = G^2_F\left\{ |V_{cd} |^2 \Gamma_{cd} + |V_{cs} |^2 \Gamma_{cs} + |V_{us} |^2 \Gamma_{su}
-	\right\}\,,
+  \Gamma = G^2_F\left\{ |V_{cd} |^2 \Gamma_{cd} + |V_{cs} |^2 \Gamma_{cs} + |V_{us} |^2 \Gamma_{su}
+  \right\}\,,
 \end{equation}
 where the different contributions on the right hand side correspond at the quark level to the weak
 transitions $c \to d$, $c \to s$, and $s \to u$, respectively.
 The contribution $su$ is suppressed by the integration over the phase
-space thus expected to be negligible. So far, we have computed only
+space and, thus, expected to be negligible. So far, we have computed only
 the contribution coming from the channels $cd$ and $cs$ and the
-computaiton of the $su$ channel is still ongoing.
-Each term can be computed
+computation of the $su$ channel is still ongoing.
+Each term can be computed from
 \begin{equation}
-	\frac{48 \pi^4}{m_{B_{(s)}}^5}\frac{d\Gamma_{fg}}{d \bm{ q^2} }
-	=\lim_{\sigma\to 0}\sum_{l=0}^2 |\bm{q}|^{3-l}\int_0^{\infty}d q_0 (q^{max}_0-q_0)^l\Theta_\sigma(q_0^{max},q_0) Z^l\,.
-	\label{eq:gamma}
+  \frac{48 \pi^4}{m_{B_{(s)}}^5}\frac{d\Gamma_{fg}}{d \bm{ q^2} }
+  =\lim_{\sigma\to 0}\sum_{l=0}^2 |\bm{q}|^{3-l}\int_0^{\infty}d q_0 (q^{max}_0-q_0)^l\Theta_\sigma(q_0^{max},q_0) Z_l\,.
+  \label{eq:gamma}
 \end{equation}
-The above integral can be computed with the HLT method \cite{Hansen:2019idp} reconstructing the
+The above integral can be estimated with the HLT method~\cite{Hansen:2019idp} reconstructing the
 convolution of the spectral
-density $Z$  with the kernel $\Theta_\sigma$.
+density $Z_l$  with the kernel $\Theta_\sigma$.
 In the HLT method, the kernel $\Theta_\sigma$ gets replaced by an
 approximate kernel $\sum_{\tau=1}^Ng_\tau e^{-\omega_0\tau}$, where
 $N$ is the number of time slices used in the spectral recontruction,
