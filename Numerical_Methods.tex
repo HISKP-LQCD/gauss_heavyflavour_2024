@@ -28,7 +28,8 @@ effective mass of the $D_s$ meson
 \begin{equation}\label{eq:meff}
 	M_{eff}^{D_s}(t)\ =\ \ln\frac{C(t)}{C(t+1)}	
 \end{equation}
-is shown in lattice units as a function of the source sink separation $t=t_{snk}-t_{src}$. We compare the effective mass
+is shown in lattice units as a function of the source sink separation
+$t=t_{snk}-t_{src}$. We compare the effective mass 
 computed from a local-local correlation function with the one computed from
 a smeared-smeared correlation function (blue circles). Ground state
 dominance is reached significantly earlier for the smeared correlation
@@ -42,7 +43,7 @@ function.
   \label{fig:smearing}
 \end{SCfigure}
 
-For the contraction of the quark loops, we will use nissa software
+For the contraction of the quark loops, we will use the nissa software
 suite\footnote{nissa is publicly available at
 \url{https://github.com/sunpho84/nissa}}, a C++  software for lattice
 QCD calculations. The package provides the functionality for memory
@@ -50,6 +51,7 @@ distributed and shared memory systems and it supports all contractions
 needed for this proposal.
 
 \subsection{The multi-grid solver}
+
 The algorithms and codes to be used for this project are developed  for the NVIDIA GPU architecture
 and thus are very well suited for the JUWELS booster module. For the solver we will use the QUDA library~\cite{Clark:2009wm,Babich:2011np,Clark:2016rdz} which provides optimised kernels for NVIDIA GPUs.
 Simulations close to or at the physical point, like in this project, are  expensive, with the most computationally demanding component being the generation of quark propagators that require inverting the Dirac operator.
